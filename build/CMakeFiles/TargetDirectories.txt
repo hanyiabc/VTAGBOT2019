@@ -43,6 +43,13 @@
 /home/hongxu/atv_ws/build/atvsim_description/CMakeFiles/_catkin_empty_exported_target.dir
 /home/hongxu/atv_ws/build/atvsim_description/CMakeFiles/rebuild_cache.dir
 /home/hongxu/atv_ws/build/atvsim_description/CMakeFiles/install.dir
+/home/hongxu/atv_ws/build/pysdf/CMakeFiles/install/strip.dir
+/home/hongxu/atv_ws/build/pysdf/CMakeFiles/edit_cache.dir
+/home/hongxu/atv_ws/build/pysdf/CMakeFiles/list_install_components.dir
+/home/hongxu/atv_ws/build/pysdf/CMakeFiles/test.dir
+/home/hongxu/atv_ws/build/pysdf/CMakeFiles/install/local.dir
+/home/hongxu/atv_ws/build/pysdf/CMakeFiles/rebuild_cache.dir
+/home/hongxu/atv_ws/build/pysdf/CMakeFiles/install.dir
 /home/hongxu/atv_ws/build/atvsim_gazebo/CMakeFiles/install.dir
 /home/hongxu/atv_ws/build/atvsim_gazebo/CMakeFiles/list_install_components.dir
 /home/hongxu/atv_ws/build/atvsim_gazebo/CMakeFiles/edit_cache.dir

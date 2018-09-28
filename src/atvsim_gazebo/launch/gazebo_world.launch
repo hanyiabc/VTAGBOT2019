@@ -18,7 +18,10 @@
 		<arg name="use_sim_time" value="$(arg use_sim_time)" />
 		<arg name="headless" value="$(arg headless)" />
 	</include>
-	<!-- <rosparam file="$(find atvsim_control)/config/ackermann.yaml" command="load"/>
-	<rosparam file="$(find atvsim_control)/config/pids.yaml" command="load"/> -->
-
+	<!-- <rosparam file="$(find atvsim_description)/models/ATV/config/ackermann_hardware.yaml" command="load"/> -->
+	<!-- <rosparam file="$(find atvsim_description)/models/ATV/config/pids.yaml" command="load"/> -->
+	<!-- <param name="robot_description" textfile="$(find atvsim_description)/models/ATV/model.urdf"/> -->
+	<!-- <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model ATV" /> -->
+	<!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /> -->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find atvsim_description)/models/ATV/model.urdf -urdf -z 1 -model ATV" />
 </launch>

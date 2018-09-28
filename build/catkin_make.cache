@@ -1,2 +1,2 @@
-atvsim_control:atvsim_description:atvsim_gazebo
+atvsim_control:atvsim_description:atvsim_gazebo:pysdf
 -DCATKIN_DEVEL_PREFIX=/home/hongxu/atv_ws/devel -DCMAKE_INSTALL_PREFIX=/home/hongxu/atv_ws/install -G Unix Makefiles

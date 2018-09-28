@@ -681,9 +681,27 @@
         <instance_light url="#EnvironmentAmbientLight"/>
       </node>
       <node id="node-Body" name="Body">
+      <node>
+        <matrix>0.08722734 0 0 0 0 0.08722734 0 -37.48439 0 0 0.08722734 79.69855 0 0 0 1</matrix>
+        <instance_geometry url="#geom-Body">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="RangerXP900" target="#RangerXP900-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      </node>
+      <node id="node-Steering_Wheel" name="Steering_Wheel">
+        <translate>-46.45838 61.15776 104.6117</translate>
+        <rotate>-1 0 0 -34.99999</rotate>
+        <scale>0.08722734 0.08722735 0.08722735</scale>
         <node>
-          <matrix>0.08722734 0 0 0 0 0.08722734 0 -37.48439 0 0 0.08722734 79.69855 0 0 0 1</matrix>
-          <instance_geometry url="#geom-Body">
+          <matrix>1 -7.90511e-9 2.50718e-8 532.6126 -7.90511e-9 0.8191521 0.5735763 -1090.169 -2.50718e-8 -0.5735763 0.8191521 414.6769 0 0 0 1</matrix>
+          <instance_geometry url="#geom-Steering_Wheel">
             <bind_material>
               <technique_common>
                 <instance_material symbol="RangerXP900" target="#RangerXP900-material">
@@ -694,88 +712,21 @@
             </bind_material>
           </instance_geometry>
         </node>
-        <node id="node-Steering_Wheel" name="Steering_Wheel">
-          <translate>-46.45838 61.15776 104.6117</translate>
-          <rotate>-1 0 0 -34.99999</rotate>
-          <scale>0.08722734 0.08722735 0.08722735</scale>
-          <node>
-            <matrix>1 -7.90511e-9 2.50718e-8 532.6126 -7.90511e-9 0.8191521 0.5735763 -1090.169 -2.50718e-8 -0.5735763 0.8191521 414.6769 0 0 0 1</matrix>
-            <instance_geometry url="#geom-Steering_Wheel">
-              <bind_material>
-                <technique_common>
-                  <instance_material symbol="RangerXP900" target="#RangerXP900-material">
-                    <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
-                    <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
-                  </instance_material>
-                </technique_common>
-              </bind_material>
-            </instance_geometry>
-          </node>
-          <extra>
-            <technique profile="OpenCOLLADA">
-              <cast_shadows>1</cast_shadows>
-              <primary_visibility>1</primary_visibility>
-              <receive_shadows>1</receive_shadows>
-              <secondary_visibility>1</secondary_visibility>
-            </technique>
-          </extra>
-        </node>
-        <node id="node-Gas_Pedal" name="Gas_Pedal">
-          <translate>-22.4216 83.81009 70.56557</translate>
-          <scale>0.08722734 0.08722734 0.08722734</scale>
-          <node>
-            <matrix>1 0 0 257.0479 0 1 0 -1390.556 0 0 1 153.1116 0 0 0 1</matrix>
-            <instance_geometry url="#geom-Gas_Pedal">
-              <bind_material>
-                <technique_common>
-                  <instance_material symbol="RangerXP900" target="#RangerXP900-material">
-                    <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
-                    <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
-                  </instance_material>
-                </technique_common>
-              </bind_material>
-            </instance_geometry>
-          </node>
-          <extra>
-            <technique profile="OpenCOLLADA">
-              <cast_shadows>1</cast_shadows>
-              <primary_visibility>1</primary_visibility>
-              <receive_shadows>1</receive_shadows>
-              <secondary_visibility>1</secondary_visibility>
-            </technique>
-          </extra>
-        </node>
-        <node id="node-Brake_Pedal" name="Brake_Pedal">
-          <translate>-36.44297 83.81009 70.56557</translate>
-          <scale>0.08722734 0.08722734 0.08722734</scale>
-          <node>
-            <matrix>1 0 0 417.793 0 1 0 -1390.556 0 0 1 153.1116 0 0 0 1</matrix>
-            <instance_geometry url="#geom-Brake_Pedal">
-              <bind_material>
-                <technique_common>
-                  <instance_material symbol="RangerXP900" target="#RangerXP900-material">
-                    <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
-                    <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
-                  </instance_material>
-                </technique_common>
-              </bind_material>
-            </instance_geometry>
-          </node>
-          <extra>
-            <technique profile="OpenCOLLADA">
-              <cast_shadows>1</cast_shadows>
-              <primary_visibility>1</primary_visibility>
-              <receive_shadows>1</receive_shadows>
-              <secondary_visibility>1</secondary_visibility>
-            </technique>
-          </extra>
-        </node>
-        <node id="node-Brake_Front_Right" name="Brake_Front_Right">
-          <translate>52.74839 108.5968 35.51725</translate>
-          <scale>0.08722734 0.08722734 0.08722734</scale>
-          <node>
-            <matrix>1 0 0 604.774 0 1 0 -1674.718 0 0 1 506.5075 0 0 0 1</matrix>
-          <instance_geometry url="#geom-Brake_Front_Right">
+        <extra>
+          <technique profile="OpenCOLLADA">
+            <cast_shadows>1</cast_shadows>
+            <primary_visibility>1</primary_visibility>
+            <receive_shadows>1</receive_shadows>
+            <secondary_visibility>1</secondary_visibility>
+          </technique>
+        </extra>
+      </node>
+      <node id="node-Gas_Pedal" name="Gas_Pedal">
+        <translate>-22.4216 83.81009 70.56557</translate>
+        <scale>0.08722734 0.08722734 0.08722734</scale>
+        <node>
+          <matrix>1 0 0 257.0479 0 1 0 -1390.556 0 0 1 153.1116 0 0 0 1</matrix>
+          <instance_geometry url="#geom-Gas_Pedal">
             <bind_material>
               <technique_common>
                 <instance_material symbol="RangerXP900" target="#RangerXP900-material">
@@ -786,10 +737,108 @@
             </bind_material>
           </instance_geometry>
         </node>
-        <node id="node-Wheel_Front_Right" name="Wheel_Front_Right">
+        <extra>
+          <technique profile="OpenCOLLADA">
+            <cast_shadows>1</cast_shadows>
+            <primary_visibility>1</primary_visibility>
+            <receive_shadows>1</receive_shadows>
+            <secondary_visibility>1</secondary_visibility>
+          </technique>
+        </extra>
+      </node>
+      <node id="node-Brake_Pedal" name="Brake_Pedal">
+        <translate>-36.44297 83.81009 70.56557</translate>
+        <scale>0.08722734 0.08722734 0.08722734</scale>
+        <node>
+          <matrix>1 0 0 417.793 0 1 0 -1390.556 0 0 1 153.1116 0 0 0 1</matrix>
+          <instance_geometry url="#geom-Brake_Pedal">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="RangerXP900" target="#RangerXP900-material">
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <extra>
+          <technique profile="OpenCOLLADA">
+            <cast_shadows>1</cast_shadows>
+            <primary_visibility>1</primary_visibility>
+            <receive_shadows>1</receive_shadows>
+            <secondary_visibility>1</secondary_visibility>
+          </technique>
+        </extra>
+      </node>
+      <node id="node-Brake_Front_Right" name="Brake_Front_Right">
+        <translate>52.74839 108.5968 35.51725</translate>
+        <scale>0.08722734 0.08722734 0.08722734</scale>
+        <node>
+          <matrix>1 0 0 604.774 0 1 0 -1674.718 0 0 1 506.5075 0 0 0 1</matrix>
+        <instance_geometry url="#geom-Brake_Front_Right">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="RangerXP900" target="#RangerXP900-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="node-Wheel_Front_Right" name="Wheel_Front_Right">
+        <node>
+          <matrix>1 0 0 604.774 0 1 0 -1674.718 0 0 1 506.5075 0 0 0 1</matrix>
+          <instance_geometry url="#geom-Wheel_Front_Right">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="RangerXP900" target="#RangerXP900-material">
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+          <extra>
+            <technique profile="OpenCOLLADA">
+              <cast_shadows>1</cast_shadows>
+              <primary_visibility>1</primary_visibility>
+              <receive_shadows>1</receive_shadows>
+              <secondary_visibility>1</secondary_visibility>
+            </technique>
+          </extra>
+        </node>
+        <extra>
+          <technique profile="OpenCOLLADA">
+            <cast_shadows>1</cast_shadows>
+            <primary_visibility>1</primary_visibility>
+            <receive_shadows>1</receive_shadows>
+            <secondary_visibility>1</secondary_visibility>
+          </technique>
+        </extra>
+      </node>
+      <node id="node-Brake_Front_Left" name="Brake_Front_Left">
+        <translate>-52.75282 108.5968 35.51725</translate>
+        <scale>0.08722734 0.08722734 0.08722734</scale>
+        <node>
+          <matrix>1 0 0 604.774 0 1 0 -1674.718 0 0 1 506.5075 0 0 0 1</matrix>
+          <instance_geometry url="#geom-Brake_Front_Left">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="RangerXP900" target="#RangerXP900-material">
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="node-Wheel_Front_Left" name="Wheel_Front_Left">
           <node>
             <matrix>1 0 0 604.774 0 1 0 -1674.718 0 0 1 506.5075 0 0 0 1</matrix>
-            <instance_geometry url="#geom-Wheel_Front_Right">
+            <instance_geometry url="#geom-Wheel_Front_Left">
               <bind_material>
                 <technique_common>
                   <instance_material symbol="RangerXP900" target="#RangerXP900-material">
@@ -799,15 +848,6 @@
                 </technique_common>
               </bind_material>
             </instance_geometry>
-          </node>
-            <extra>
-              <technique profile="OpenCOLLADA">
-                <cast_shadows>1</cast_shadows>
-                <primary_visibility>1</primary_visibility>
-                <receive_shadows>1</receive_shadows>
-                <secondary_visibility>1</secondary_visibility>
-              </technique>
-            </extra>
           </node>
           <extra>
             <technique profile="OpenCOLLADA">
@@ -818,12 +858,36 @@
             </technique>
           </extra>
         </node>
-        <node id="node-Brake_Front_Left" name="Brake_Front_Left">
-          <translate>-52.75282 108.5968 35.51725</translate>
-          <scale>0.08722734 0.08722734 0.08722734</scale>
+        <extra>
+          <technique profile="OpenCOLLADA">
+            <cast_shadows>1</cast_shadows>
+            <primary_visibility>1</primary_visibility>
+            <receive_shadows>1</receive_shadows>
+            <secondary_visibility>1</secondary_visibility>
+          </technique>
+        </extra>
+      </node>
+      <node id="node-Bed" name="Bed">
+        <translate>-3.37837e-6 -114.7726 85.13588</translate>
+        <scale>0.08722734 0.08722734 0.08722734</scale>
+        <node>
+          <matrix>1 0 0 3.87307e-5 0 1 0 886.0547 0 0 1 -62.33517 0 0 0 1</matrix>
+          <instance_geometry url="#geom-Bed">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="RangerXP900" target="#RangerXP900-material">
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="node-Tail_Gate" name="Tail_Gate">
+          <translate>-1.49359e-5 -341.6935 38.7522</translate>
           <node>
-            <matrix>1 0 0 604.774 0 1 0 -1674.718 0 0 1 506.5075 0 0 0 1</matrix>
-            <instance_geometry url="#geom-Brake_Front_Left">
+            <matrix>1 0 0 5.36666e-5 0 1 0 1227.748 0 0 1 -101.0873 0 0 0 1</matrix>
+            <instance_geometry url="#geom-Tail_Gate">
               <bind_material>
                 <technique_common>
                   <instance_material symbol="RangerXP900" target="#RangerXP900-material">
@@ -833,29 +897,6 @@
                 </technique_common>
               </bind_material>
             </instance_geometry>
-          </node>
-          <node id="node-Wheel_Front_Left" name="Wheel_Front_Left">
-            <node>
-              <matrix>1 0 0 604.774 0 1 0 -1674.718 0 0 1 506.5075 0 0 0 1</matrix>
-              <instance_geometry url="#geom-Wheel_Front_Left">
-                <bind_material>
-                  <technique_common>
-                    <instance_material symbol="RangerXP900" target="#RangerXP900-material">
-                      <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
-                      <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
-                    </instance_material>
-                  </technique_common>
-                </bind_material>
-              </instance_geometry>
-            </node>
-            <extra>
-              <technique profile="OpenCOLLADA">
-                <cast_shadows>1</cast_shadows>
-                <primary_visibility>1</primary_visibility>
-                <receive_shadows>1</receive_shadows>
-                <secondary_visibility>1</secondary_visibility>
-              </technique>
-            </extra>
           </node>
           <extra>
             <technique profile="OpenCOLLADA">
@@ -866,79 +907,30 @@
             </technique>
           </extra>
         </node>
-        <node id="node-Bed" name="Bed">
-          <translate>-3.37837e-6 -114.7726 85.13588</translate>
-          <scale>0.08722734 0.08722734 0.08722734</scale>
-          <node>
-            <matrix>1 0 0 3.87307e-5 0 1 0 886.0547 0 0 1 -62.33517 0 0 0 1</matrix>
-            <instance_geometry url="#geom-Bed">
-              <bind_material>
-                <technique_common>
-                  <instance_material symbol="RangerXP900" target="#RangerXP900-material">
-                    <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
-                    <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
-                  </instance_material>
-                </technique_common>
-              </bind_material>
-            </instance_geometry>
-          </node>
-          <node id="node-Tail_Gate" name="Tail_Gate">
-            <translate>-1.49359e-5 -341.6935 38.7522</translate>
-            <node>
-              <matrix>1 0 0 5.36666e-5 0 1 0 1227.748 0 0 1 -101.0873 0 0 0 1</matrix>
-              <instance_geometry url="#geom-Tail_Gate">
-                <bind_material>
-                  <technique_common>
-                    <instance_material symbol="RangerXP900" target="#RangerXP900-material">
-                      <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
-                      <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
-                    </instance_material>
-                  </technique_common>
-                </bind_material>
-              </instance_geometry>
-            </node>
-            <extra>
-              <technique profile="OpenCOLLADA">
-                <cast_shadows>1</cast_shadows>
-                <primary_visibility>1</primary_visibility>
-                <receive_shadows>1</receive_shadows>
-                <secondary_visibility>1</secondary_visibility>
-              </technique>
-            </extra>
-          </node>
-          <extra>
-            <technique profile="OpenCOLLADA">
-              <cast_shadows>1</cast_shadows>
-              <primary_visibility>1</primary_visibility>
-              <receive_shadows>1</receive_shadows>
-              <secondary_visibility>1</secondary_visibility>
-            </technique>
-          </extra>
-        </node>
-        <node id="node-Wheels_Rear_Left" name="Wheels_Rear_Left">
-          <translate>-55.0164 -97.75069 35.51725</translate>
-          <scale>0.08722734 0.08722734 0.08722734</scale>
-          <node>
-            <matrix>1 0 0 630.7243 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
-            <instance_geometry url="#geom-Wheels_Rear_Left">
-              <bind_material>
-                <technique_common>
-                  <instance_material symbol="RangerXP900" target="#RangerXP900-material">
-                    <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
-                    <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
-                  </instance_material>
-                </technique_common>
-              </bind_material>
-            </instance_geometry>
-          </node>
-          <extra>
-            <technique profile="OpenCOLLADA">
-              <cast_shadows>1</cast_shadows>
-              <primary_visibility>1</primary_visibility>
-              <receive_shadows>1</receive_shadows>
-              <secondary_visibility>1</secondary_visibility>
-            </technique>
-          </extra>
+        <extra>
+          <technique profile="OpenCOLLADA">
+            <cast_shadows>1</cast_shadows>
+            <primary_visibility>1</primary_visibility>
+            <receive_shadows>1</receive_shadows>
+            <secondary_visibility>1</secondary_visibility>
+          </technique>
+        </extra>
+      </node>
+      <node id="node-Wheels_Rear_Left" name="Wheels_Rear_Left">
+        <translate>-55.0164 -97.75069 35.51725</translate>
+        <scale>0.08722734 0.08722734 0.08722734</scale>
+        <node>
+          <matrix>1 0 0 630.7243 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+          <instance_geometry url="#geom-Wheels_Rear_Left">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="RangerXP900" target="#RangerXP900-material">
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
         </node>
         <extra>
           <technique profile="OpenCOLLADA">
@@ -998,6 +990,14 @@
           </technique>
         </extra>
       </node>
+      <extra>
+          <technique profile="OpenCOLLADA">
+            <cast_shadows>1</cast_shadows>
+            <primary_visibility>1</primary_visibility>
+            <receive_shadows>1</receive_shadows>
+            <secondary_visibility>1</secondary_visibility>
+          </technique>
+        </extra>
     </visual_scene>
   </library_visual_scenes>
   <scene>

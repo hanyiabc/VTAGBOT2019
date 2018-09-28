@@ -123,6 +123,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/hongxu/atv_ws/build/gtest/cmake_install.cmake")
   include("/home/hongxu/atv_ws/build/atvsim_description/cmake_install.cmake")
+  include("/home/hongxu/atv_ws/build/pysdf/cmake_install.cmake")
   include("/home/hongxu/atv_ws/build/atvsim_gazebo/cmake_install.cmake")
   include("/home/hongxu/atv_ws/build/atvsim_control/cmake_install.cmake")
 

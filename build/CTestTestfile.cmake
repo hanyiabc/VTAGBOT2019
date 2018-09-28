@@ -6,5 +6,6 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
 subdirs("atvsim_description")
+subdirs("pysdf")
 subdirs("atvsim_gazebo")
 subdirs("atvsim_control")

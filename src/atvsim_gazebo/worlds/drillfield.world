@@ -3950,9 +3950,5 @@
       </link>
       <pose frame=''>0 0 0 0 -0 0</pose>
     </model>
-    <include>
-      <!-- <uri>model://polaris_ranger_xp900</uri> -->
-      <uri>model://ATV</uri>
-    </include>
   </world>
 </sdf>

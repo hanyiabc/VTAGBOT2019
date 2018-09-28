@@ -1,0 +1,8 @@
+prefix=/home/hongxu/atv_ws/devel
+
+Name: pysdf
+Description: Description of pysdf
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/hongxu/atv_ws/devel/lib 
+Requires: 
