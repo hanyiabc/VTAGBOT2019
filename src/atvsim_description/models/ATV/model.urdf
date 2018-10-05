@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <robot name="ATV">
-  <joint name="ATV/imu_joint" type="revolute">
+  <joint name="ATV/imu_joint" type="fixed">
     <parent link="chassis"/>
     <child link="ATV/imu_link"/>
     <origin rpy="0  0  0" xyz="0  0  0"/>
@@ -49,11 +49,77 @@
     <axis xyz="0   0.00083  -1"/>
     <limit effort="0" velocity="0"/>
   </joint>
-  <!-- <joint name="rear_differential_joint" type="revolute">
+  <!-- <joint name="front_left_rod_joint" type="revolute">
+    <parent link="steering_rod"/>
+    <child link="steering_rod_left_block"/>
+    <origin rpy="1.57079  0       0" xyz="-0.5  0      0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0.0" lower="0" upper="0" velocity="0.0"/>
+  </joint>
+  <joint name="front_right_rod_joint" type="revolute">
+    <parent link="steering_rod"/>
+    <child link="steering_rod_right_block"/>
+    <origin rpy="1.57079  0       0" xyz="0.5  0      0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0.0" lower="0" upper="0" velocity="0.0"/>
+  </joint> -->
+  <joint name="front_left_steering_rod_joint" type="continuous">
+    <parent link="front_left_wheel_steering_block"/>
+    <child link="steering_rod_left_block"/>
+    <origin rpy="0  0       0" xyz="0.5 0 -0.11"/>
+    <axis xyz="0  1 0"/>
+    <limit effort="0.0" lower="0" upper="0" velocity="0.0"/>
+  </joint>
+  <joint name="front_right_steering_rod_joint" type="continuous">
+    <parent link="front_right_wheel_steering_block"/>
+    <child link="steering_rod_right_block"/>
+    <origin rpy="1.57079  0       0" xyz="0.5 0 0.11"/>
+    <axis xyz="0  0  1"/>
+    <limit effort="0.0" lower="0" upper="0" velocity="0.0"/>
+  </joint>
+  <!-- <joint name="front_right_left_steering_rod_joint" type="fixed">
+    <parent link="steering_rod_left_block"/>
+    <child link="steering_rod_right_block"/>
+    <origin rpy="1.57079  0       0" xyz="0  0      0.7"/>
+    <axis xyz="0  0  1"/>
+    <limit effort="0.0" lower="0" upper="0" velocity="0.0"/>
+  </joint> -->
+  <gazebo>
+    <joint type="fixed" name="front_right_left_steering_rod_joint">
+      <child>steering_rod_left_block</child>
+      <parent>steering_rod_right_block</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+        </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint type="revolute" name="rear_differential_joint">
+      <child>rear_right_wheel</child>
+      <parent>rear_left_wheel</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>70</damping>
+        </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <erp>0</erp>
+          <cfm>1000</cfm>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+  </gazebo>
+  <!-- <joint name="rear_differential_joint" type="continuous">
     <parent link="rear_left_wheel"/>
     <child link="rear_right_wheel"/>
-    <origin rpy="3.04  0    0" xyz="0      -0.07267 -1.42939"/>
-    <axis xyz="0       0.05077 -0.99871"/>
+    <origin rpy="-1.52  0    0" xyz="-0.99377  0.71562  0.34697"/>
+    <axis xyz="0   0     1"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint> -->
   <!-- <joint name="gas_joint" type="prismatic">
@@ -467,6 +533,63 @@
       </geometry>
     </collision>
   </link>
+  <!-- <link name="steering_rod">
+    <inertial>
+      <mass value="1"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="3.14159  0  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="1" radius="0.01"/>
+      </geometry>
+    </collision>
+    <visual name="tied_rod">
+      <origin rpy="3.14159  0  0" xyz="0 0   0"/>
+      <geometry>
+        <cylinder length="1" radius="0.01"/>
+      </geometry>
+    </visual>
+  </link> -->
+  <link name="steering_rod_left_block">
+    <inertial>
+      <mass value="1"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0    0" xyz="0  0  0.35"/>
+      <geometry>
+        <cylinder length="0.7" radius="0.01"/>
+      </geometry>
+    </collision>
+    <visual name="tied_rod_left">
+      <origin rpy="0 0  0" xyz="0 0   0.61"/>
+      <geometry>
+        <cylinder length="1.22" radius="0.01"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="steering_rod_right_block">
+    <inertial>
+      <mass value="1"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="0.1" radius="0.01"/>
+      </geometry>
+    </collision>
+    <visual name="tied_rod_right">
+      <origin rpy="0  0  0" xyz="0 0   0"/>
+      <geometry>
+        <cylinder length="0.1" radius="0.01"/>
+      </geometry>
+    </visual>
+  </link>
   <!-- <link name="steering_wheel">
     <inertial>
       <mass value="1.0"/>
@@ -688,4 +811,21 @@
       </surface>
     </collision>
   </gazebo>
+  <gazebo>
+    <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
+      <alwayson>true</alwayson>
+      <updaterate>50</updaterate>
+      <bodyname>chassis</bodyname>
+      <topicname>/fix</topicname>
+      <velocitytopicname>/fix_velocity</velocitytopicname>
+      <referenceLatitude>37.228369</referenceLatitude>
+      <referenceLongitude>-80.423045</referenceLongitude>
+      <referenceHeading>90</referenceHeading>
+      <drift>1.0 1.0 1.0</drift>
+      <gaussiannoise>0.1 0.1 0.1</gaussiannoise>
+      <velocitydrift>0 0 0</velocitydrift>
+      <velocitygaussiannoise>0.1 0.1 0.1</velocitygaussiannoise>
+    </plugin>
+  </gazebo>
+
 </robot>
