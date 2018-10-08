@@ -1,8 +1,8 @@
-# Install script for directory: /home/hongxu/atv_ws/src/pysdf
+# Install script for directory: /home/hongxu/VTAGBOT2019/src/quarternion_conversion
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/hongxu/atv_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/hongxu/VTAGBOT2019/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,21 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/hongxu/atv_ws/build/pysdf/catkin_generated/safe_execute_install.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hongxu/VTAGBOT2019/build/quarternion_conversion/catkin_generated/installspace/quarternion_conversion.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hongxu/atv_ws/build/pysdf/catkin_generated/installspace/pysdf.pc")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pysdf/cmake" TYPE FILE FILES
-    "/home/hongxu/atv_ws/build/pysdf/catkin_generated/installspace/pysdfConfig.cmake"
-    "/home/hongxu/atv_ws/build/pysdf/catkin_generated/installspace/pysdfConfig-version.cmake"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/quarternion_conversion/cmake" TYPE FILE FILES
+    "/home/hongxu/VTAGBOT2019/build/quarternion_conversion/catkin_generated/installspace/quarternion_conversionConfig.cmake"
+    "/home/hongxu/VTAGBOT2019/build/quarternion_conversion/catkin_generated/installspace/quarternion_conversionConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pysdf" TYPE FILE FILES "/home/hongxu/atv_ws/src/pysdf/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/quarternion_conversion" TYPE FILE FILES "/home/hongxu/VTAGBOT2019/src/quarternion_conversion/package.xml")
 endif()
 

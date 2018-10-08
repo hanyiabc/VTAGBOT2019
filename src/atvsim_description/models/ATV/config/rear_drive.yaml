@@ -1,0 +1,4 @@
+type: "effort_controllers/JointGroupEffortController"
+joints:
+  - rear_left_wheel_joint
+  - rear_right_wheel_joint

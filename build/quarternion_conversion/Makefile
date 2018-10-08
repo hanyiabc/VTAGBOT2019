@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hongxu/atv_ws/src
+CMAKE_SOURCE_DIR = /home/hongxu/VTAGBOT2019/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hongxu/atv_ws/build
+CMAKE_BINARY_DIR = /home/hongxu/VTAGBOT2019/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/hongxu/atv_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/hongxu/atv_ws/build/CMakeFiles /home/hongxu/atv_ws/build/pysdf/CMakeFiles/progress.marks
-	cd /home/hongxu/atv_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pysdf/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hongxu/atv_ws/build/CMakeFiles 0
+	cd /home/hongxu/VTAGBOT2019/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/hongxu/VTAGBOT2019/build/CMakeFiles /home/hongxu/VTAGBOT2019/build/quarternion_conversion/CMakeFiles/progress.marks
+	cd /home/hongxu/VTAGBOT2019/build && $(MAKE) -f CMakeFiles/Makefile2 quarternion_conversion/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hongxu/VTAGBOT2019/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/hongxu/atv_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pysdf/clean
+	cd /home/hongxu/VTAGBOT2019/build && $(MAKE) -f CMakeFiles/Makefile2 quarternion_conversion/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,17 +154,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/hongxu/atv_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pysdf/preinstall
+	cd /home/hongxu/VTAGBOT2019/build && $(MAKE) -f CMakeFiles/Makefile2 quarternion_conversion/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/hongxu/atv_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pysdf/preinstall
+	cd /home/hongxu/VTAGBOT2019/build && $(MAKE) -f CMakeFiles/Makefile2 quarternion_conversion/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/hongxu/atv_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/hongxu/VTAGBOT2019/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -191,6 +191,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/hongxu/atv_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/hongxu/VTAGBOT2019/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

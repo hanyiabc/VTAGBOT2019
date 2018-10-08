@@ -53,13 +53,13 @@
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-    <!-- <plugin name='map' filename='libStaticMapPlugin.so'>
+    <plugin name='map' filename='libStaticMapPlugin.so'>
       <center>37.228369 -80.423045</center>
       <world_size>600</world_size>
       <map_type>satellite</map_type>
       <api_key>AIzaSyBa5-Ex915Um9s6yMzhjq10vkm2eksWVLc</api_key>
       <use_cache>1</use_cache>
-    </plugin> -->
+    </plugin>
     <model name='map_satellite_37.228369_-80.423045_600_600'>
       <static>1</static>
       <link name='link'>

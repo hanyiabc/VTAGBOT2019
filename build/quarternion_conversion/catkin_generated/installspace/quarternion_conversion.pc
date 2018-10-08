@@ -1,0 +1,8 @@
+prefix=/home/hongxu/VTAGBOT2019/install
+
+Name: quarternion_conversion
+Description: Description of quarternion_conversion
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/hongxu/VTAGBOT2019/install/lib 
+Requires: 
