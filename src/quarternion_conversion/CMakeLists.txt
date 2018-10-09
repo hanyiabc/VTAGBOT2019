@@ -197,3 +197,6 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(conversion_node src/post_gazebo.cpp)
+target_link_libraries(conversion_node ${catkin_LIBRARIES})

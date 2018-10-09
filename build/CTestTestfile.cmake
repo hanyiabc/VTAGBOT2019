@@ -7,6 +7,7 @@
 subdirs("gtest")
 subdirs("atvsim_description")
 subdirs("pysdf")
+subdirs("Joy_Translate")
 subdirs("atvsim_gazebo")
 subdirs("quarternion_conversion")
 subdirs("atvsim_control")

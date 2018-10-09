@@ -168,21 +168,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-atvsim_control/CMakeFiles/joy_translate.dir/rule:
-	cd /home/hongxu/atv_ws/build && $(MAKE) -f CMakeFiles/Makefile2 atvsim_control/CMakeFiles/joy_translate.dir/rule
-.PHONY : atvsim_control/CMakeFiles/joy_translate.dir/rule
-
-# Convenience name for target.
-joy_translate: atvsim_control/CMakeFiles/joy_translate.dir/rule
-
-.PHONY : joy_translate
-
-# fast build rule for target.
-joy_translate/fast:
-	cd /home/hongxu/atv_ws/build && $(MAKE) -f atvsim_control/CMakeFiles/joy_translate.dir/build.make atvsim_control/CMakeFiles/joy_translate.dir/build
-.PHONY : joy_translate/fast
-
-# Convenience name for target.
 atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/rule:
 	cd /home/hongxu/atv_ws/build && $(MAKE) -f CMakeFiles/Makefile2 atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/rule
 .PHONY : atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/rule
@@ -299,33 +284,6 @@ src/gazebo_controller_adaptor.cpp.s:
 	cd /home/hongxu/atv_ws/build && $(MAKE) -f atvsim_control/CMakeFiles/controller_adaptor.dir/build.make atvsim_control/CMakeFiles/controller_adaptor.dir/src/gazebo_controller_adaptor.cpp.s
 .PHONY : src/gazebo_controller_adaptor.cpp.s
 
-src/joyTranslate.o: src/joyTranslate.cpp.o
-
-.PHONY : src/joyTranslate.o
-
-# target to build an object file
-src/joyTranslate.cpp.o:
-	cd /home/hongxu/atv_ws/build && $(MAKE) -f atvsim_control/CMakeFiles/joy_translate.dir/build.make atvsim_control/CMakeFiles/joy_translate.dir/src/joyTranslate.cpp.o
-.PHONY : src/joyTranslate.cpp.o
-
-src/joyTranslate.i: src/joyTranslate.cpp.i
-
-.PHONY : src/joyTranslate.i
-
-# target to preprocess a source file
-src/joyTranslate.cpp.i:
-	cd /home/hongxu/atv_ws/build && $(MAKE) -f atvsim_control/CMakeFiles/joy_translate.dir/build.make atvsim_control/CMakeFiles/joy_translate.dir/src/joyTranslate.cpp.i
-.PHONY : src/joyTranslate.cpp.i
-
-src/joyTranslate.s: src/joyTranslate.cpp.s
-
-.PHONY : src/joyTranslate.s
-
-# target to generate assembly for a file
-src/joyTranslate.cpp.s:
-	cd /home/hongxu/atv_ws/build && $(MAKE) -f atvsim_control/CMakeFiles/joy_translate.dir/build.make atvsim_control/CMakeFiles/joy_translate.dir/src/joyTranslate.cpp.s
-.PHONY : src/joyTranslate.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -338,7 +296,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... joy_translate"
 	@echo "... controller_manager_msgs_generate_messages_eus"
 	@echo "... controller_manager_msgs_generate_messages_nodejs"
 	@echo "... list_install_components"
@@ -349,9 +306,6 @@ help:
 	@echo "... src/gazebo_controller_adaptor.o"
 	@echo "... src/gazebo_controller_adaptor.i"
 	@echo "... src/gazebo_controller_adaptor.s"
-	@echo "... src/joyTranslate.o"
-	@echo "... src/joyTranslate.i"
-	@echo "... src/joyTranslate.s"
 .PHONY : help
 
 

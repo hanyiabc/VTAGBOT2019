@@ -1,0 +1,8 @@
+prefix=/home/hongxu/atv_ws/devel
+
+Name: Joy_Translate
+Description: Description of Joy_Translate
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/hongxu/atv_ws/devel/lib 
+Requires: 

@@ -200,6 +200,3 @@ include_directories(
 
 add_executable(controller_adaptor src/gazebo_controller_adaptor.cpp)
 target_link_libraries(controller_adaptor ${catkin_LIBRARIES})
-
-add_executable(joy_translate src/joyTranslate.cpp)
-target_link_libraries(joy_translate ${catkin_LIBRARIES})
