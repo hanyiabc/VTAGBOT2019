@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hongxu/VTAGBOT2019/src
+CMAKE_SOURCE_DIR = /home/hongxu/atv_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hongxu/VTAGBOT2019/build
+CMAKE_BINARY_DIR = /home/hongxu/atv_ws/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hongxu/VTAGBOT2019/build/CMakeFiles /home/hongxu/VTAGBOT2019/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hongxu/atv_ws/build/CMakeFiles /home/hongxu/atv_ws/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hongxu/VTAGBOT2019/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hongxu/atv_ws/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -1169,6 +1169,19 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named joy_translate
+
+# Build rule for target.
+joy_translate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 joy_translate
+.PHONY : joy_translate
+
+# fast build rule for target.
+joy_translate/fast:
+	$(MAKE) -f atvsim_control/CMakeFiles/joy_translate.dir/build.make atvsim_control/CMakeFiles/joy_translate.dir/build
+.PHONY : joy_translate/fast
+
+#=============================================================================
 # Target rules for targets named controller_manager_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -1219,6 +1232,19 @@ controller_manager_msgs_generate_messages_cpp: cmake_check_build_system
 controller_manager_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/build.make atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/build
 .PHONY : controller_manager_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named controller_adaptor
+
+# Build rule for target.
+controller_adaptor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_adaptor
+.PHONY : controller_adaptor
+
+# fast build rule for target.
+controller_adaptor/fast:
+	$(MAKE) -f atvsim_control/CMakeFiles/controller_adaptor.dir/build.make atvsim_control/CMakeFiles/controller_adaptor.dir/build
+.PHONY : controller_adaptor/fast
 
 #=============================================================================
 # Target rules for targets named controller_manager_msgs_generate_messages_lisp
@@ -1323,10 +1349,12 @@ help:
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... tf_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... joy_translate"
 	@echo "... controller_manager_msgs_generate_messages_eus"
 	@echo "... controller_manager_msgs_generate_messages_nodejs"
 	@echo "... controller_manager_msgs_generate_messages_py"
 	@echo "... controller_manager_msgs_generate_messages_cpp"
+	@echo "... controller_adaptor"
 	@echo "... controller_manager_msgs_generate_messages_lisp"
 .PHONY : help
 

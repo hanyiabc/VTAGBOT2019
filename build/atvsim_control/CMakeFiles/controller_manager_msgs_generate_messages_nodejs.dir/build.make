@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hongxu/VTAGBOT2019/src
+CMAKE_SOURCE_DIR = /home/hongxu/atv_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hongxu/VTAGBOT2019/build
+CMAKE_BINARY_DIR = /home/hongxu/atv_ws/build
 
 # Utility rule file for controller_manager_msgs_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/b
 .PHONY : atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/build
 
 atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/hongxu/VTAGBOT2019/build/atvsim_control && $(CMAKE_COMMAND) -P CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/hongxu/atv_ws/build/atvsim_control && $(CMAKE_COMMAND) -P CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/clean
 
 atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/hongxu/VTAGBOT2019/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hongxu/VTAGBOT2019/src /home/hongxu/VTAGBOT2019/src/atvsim_control /home/hongxu/VTAGBOT2019/build /home/hongxu/VTAGBOT2019/build/atvsim_control /home/hongxu/VTAGBOT2019/build/atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/hongxu/atv_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hongxu/atv_ws/src /home/hongxu/atv_ws/src/atvsim_control /home/hongxu/atv_ws/build /home/hongxu/atv_ws/build/atvsim_control /home/hongxu/atv_ws/build/atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/depend
 

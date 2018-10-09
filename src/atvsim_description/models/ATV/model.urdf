@@ -26,7 +26,7 @@
     <child link="front_right_wheel_steering_block"/>
     <origin rpy="1.57079  0       0" xyz="1.20222 -0.5      0.35515"/>
     <axis xyz="0  1  0"/>
-    <limit effort="0.0" lower="-0.7727" upper="0.7727" velocity="0.0"/>
+    <limit effort="1000" lower="-0.7727" upper="0.7727" velocity="5"/>
   </joint>
   <joint name="front_right_wheel_joint" type="continuous">
     <parent link="front_right_wheel_steering_block"/>
@@ -40,14 +40,14 @@
     <child link="rear_left_wheel"/>
     <origin rpy="-1.52  0    0" xyz="-0.99377  0.71562  0.34697"/>
     <axis xyz="0   0.00083   1"/>
-    <limit effort="1000" velocity="5"/>
+    <limit effort="750" velocity="15"/>
   </joint>
   <joint name="rear_right_wheel_joint" type="continuous">
     <parent link="chassis"/>
     <child link="rear_right_wheel"/>
     <origin rpy="1.52  0    0" xyz="-0.99377 -0.71562  0.34697"/>
     <axis xyz="0   0.00083  -1"/>
-    <limit effort="1000" velocity="5"/>
+    <limit effort="750" velocity="15"/>
   </joint>
   <!-- <joint name="front_left_rod_joint" type="revolute">
     <parent link="steering_rod"/>
@@ -565,9 +565,9 @@
       </geometry>
     </collision>
     <visual name="tied_rod_left">
-      <origin rpy="0 0  0" xyz="0 0   0.61"/>
+      <origin rpy="0 0  0" xyz="0 0   0.39"/>
       <geometry>
-        <cylinder length="1.22" radius="0.01"/>
+        <cylinder length="0.78" radius="0.01"/>
       </geometry>
     </visual>
   </link>
@@ -847,6 +847,15 @@
     </actuator>
     <joint name="rear_right_wheel_joint">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+  <transmission name="steering_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="$steering_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="front_right_steering_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
   </transmission>
 </robot>

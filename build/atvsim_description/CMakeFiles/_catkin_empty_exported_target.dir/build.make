@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hongxu/VTAGBOT2019/src
+CMAKE_SOURCE_DIR = /home/hongxu/atv_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hongxu/VTAGBOT2019/build
+CMAKE_BINARY_DIR = /home/hongxu/atv_ws/build
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -63,10 +63,10 @@ atvsim_description/CMakeFiles/_catkin_empty_exported_target.dir/build: _catkin_e
 .PHONY : atvsim_description/CMakeFiles/_catkin_empty_exported_target.dir/build
 
 atvsim_description/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	cd /home/hongxu/VTAGBOT2019/build/atvsim_description && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
+	cd /home/hongxu/atv_ws/build/atvsim_description && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
 .PHONY : atvsim_description/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 atvsim_description/CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/hongxu/VTAGBOT2019/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hongxu/VTAGBOT2019/src /home/hongxu/VTAGBOT2019/src/atvsim_description /home/hongxu/VTAGBOT2019/build /home/hongxu/VTAGBOT2019/build/atvsim_description /home/hongxu/VTAGBOT2019/build/atvsim_description/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/hongxu/atv_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hongxu/atv_ws/src /home/hongxu/atv_ws/src/atvsim_description /home/hongxu/atv_ws/build /home/hongxu/atv_ws/build/atvsim_description /home/hongxu/atv_ws/build/atvsim_description/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : atvsim_description/CMakeFiles/_catkin_empty_exported_target.dir/depend
 

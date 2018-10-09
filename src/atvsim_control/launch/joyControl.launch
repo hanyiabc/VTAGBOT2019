@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="joy" type="joy_node" name="joy" />
+  <node pkg="atvsim_control" type="controller_adaptor" name="adaptor" />
+  <node pkg="atvsim_control" type="joy_translate" name="joy_translate" />
+  <include file="$(find atvsim_gazebo)/launch/gazebo_world.launch" />
+</launch>

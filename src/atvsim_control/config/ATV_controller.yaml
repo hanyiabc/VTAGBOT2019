@@ -1,0 +1,18 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+rear_drive_controller:
+  type: effort_controllers/JointGroupEffortController
+  joints:
+    - rear_left_wheel_joint
+    - rear_right_wheel_joint
+steering_controller:
+  type: position_controllers/JointPositionController
+  joints: front_right_steering_joint
+/gazebo_ros_control:
+  pid_gains:
+    front_right_steering_joint:
+      p: 100.0
+      i: 0.01
+      d: 10.0
