@@ -3,6 +3,8 @@
 
 atvsim_control/CMakeFiles/controller_adaptor.dir/src/gazebo_controller_adaptor.cpp.o
  /home/hongxu/atv_ws/src/atvsim_control/src/gazebo_controller_adaptor.cpp
+ /opt/ros/melodic/include/geometry_msgs/Twist.h
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h
  /opt/ros/melodic/include/ros/assert.h

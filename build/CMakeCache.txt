@@ -317,6 +317,9 @@ catkin_DIR:PATH=/opt/ros/melodic/share/catkin/cmake
 //The directory containing a CMake configuration file for class_loader.
 class_loader_DIR:PATH=/opt/ros/melodic/share/class_loader/cmake
 
+//The directory containing a CMake configuration file for cmath.
+cmath_DIR:PATH=cmath_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for controller_interface.
 controller_interface_DIR:PATH=/opt/ros/melodic/share/controller_interface/cmake
 
@@ -431,6 +434,12 @@ message_runtime_DIR:PATH=/opt/ros/melodic/share/message_runtime/cmake
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/melodic/share/pluginlib/cmake
+
+//Value Computed by CMake
+post_gazebo_BINARY_DIR:STATIC=/home/hongxu/atv_ws/build/post_gazebo
+
+//Value Computed by CMake
+post_gazebo_SOURCE_DIR:STATIC=/home/hongxu/atv_ws/src/post_gazebo
 
 //Value Computed by CMake
 pysdf_BINARY_DIR:STATIC=/home/hongxu/atv_ws/build/pysdf

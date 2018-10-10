@@ -31,7 +31,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "adaptor");
   ros::NodeHandle n;
   ros::Publisher steer_pub = n.advertise<std_msgs::Float64>("steering_pos_cmd", 1000);
-  ros::Publisher pedal_pub = n.advertise<std_msgs::Float64>("pedal_effort_cmd", 1000);
+  ros::Publisher pedal_pub = n.advertise<std_msgs::Float64>("pedal_cmd", 1000);
   ros::Publisher engine_pub = n.advertise<std_msgs::Bool>("engine_cut", 1000);
   Translator translator;
   ros::Subscriber joy_sub = n.subscribe("joy", 1000, &Translator::joy_callback, &translator);

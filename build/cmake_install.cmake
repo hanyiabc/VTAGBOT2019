@@ -126,7 +126,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/hongxu/atv_ws/build/pysdf/cmake_install.cmake")
   include("/home/hongxu/atv_ws/build/Joy_Translate/cmake_install.cmake")
   include("/home/hongxu/atv_ws/build/atvsim_gazebo/cmake_install.cmake")
-  include("/home/hongxu/atv_ws/build/quarternion_conversion/cmake_install.cmake")
+  include("/home/hongxu/atv_ws/build/post_gazebo/cmake_install.cmake")
   include("/home/hongxu/atv_ws/build/atvsim_control/cmake_install.cmake")
 
 endif()

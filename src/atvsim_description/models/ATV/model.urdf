@@ -12,6 +12,7 @@
     <child link="front_left_wheel_steering_block"/>
     <origin rpy="1.57079  0       0" xyz="1.20222  0.5      0.35515"/>
     <axis xyz="0  1  0"/>
+    <dynamics damping="1" friction="1"/>
     <limit effort="0.0" lower="-0.7727" upper="0.7727" velocity="0.0"/>
   </joint>
   <joint name="front_left_wheel_joint" type="continuous">
@@ -19,6 +20,7 @@
     <child link="front_left_wheel"/>
     <origin rpy="-3.09079  0       0" xyz="0      -0.00818 -0.21562"/>
     <axis xyz="0   0.00083   1"/>
+    <dynamics damping="10" friction="10"/>
     <limit effort="0" velocity="0"/>
   </joint>
   <joint name="front_right_steering_joint" type="revolute">
@@ -26,6 +28,7 @@
     <child link="front_right_wheel_steering_block"/>
     <origin rpy="1.57079  0       0" xyz="1.20222 -0.5      0.35515"/>
     <axis xyz="0  1  0"/>
+    <dynamics damping="1" friction="1"/>
     <limit effort="1000" lower="-0.7727" upper="0.7727" velocity="5"/>
   </joint>
   <joint name="front_right_wheel_joint" type="continuous">
@@ -34,12 +37,14 @@
     <origin rpy="-0.05079  0       0" xyz="0      -0.00818  0.21562"/>
     <axis xyz="0   0.000083  -1"/>
     <limit effort="0" velocity="0"/>
+    <dynamics damping="10" friction="10"/>
   </joint>
   <joint name="rear_left_wheel_joint" type="continuous">
     <parent link="chassis"/>
     <child link="rear_left_wheel"/>
     <origin rpy="-1.52  0    0" xyz="-0.99377  0.71562  0.34697"/>
     <axis xyz="0   0.00083   1"/>
+    <dynamics damping="10" friction="10"/>
     <limit effort="750" velocity="15"/>
   </joint>
   <joint name="rear_right_wheel_joint" type="continuous">
@@ -47,6 +52,7 @@
     <child link="rear_right_wheel"/>
     <origin rpy="1.52  0    0" xyz="-0.99377 -0.71562  0.34697"/>
     <axis xyz="0   0.00083  -1"/>
+    <dynamics damping="10" friction="10"/>
     <limit effort="750" velocity="15"/>
   </joint>
   <!-- <joint name="front_left_rod_joint" type="revolute">
@@ -826,12 +832,27 @@
       <rpyOffset>0.0 0.0 0.0</rpyOffset>
       <xyzOffset>0.0 0.0 0.0</xyzOffset>
       <gaussianNoise>0.0</gaussianNoise>
+      <yawOffset>-1.5708</yawOffset>
     </plugin>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       <robotNamespace>/</robotNamespace>
     </plugin>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>$50</updateRate>
+      <leftJoint>rear_left_wheel_joint</leftJoint>
+      <rightJoint>rear_right_wheel_joint</rightJoint>
+      <wheelSeparation>1.43124</wheelSeparation>
+      <wheelDiameter>0.635</wheelDiameter>
+      <wheelTorque>300</wheelTorque>
+      <commandTopic>rear_wheel_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>chassis</robotBaseFrame>
+    </plugin>
+
   </gazebo>
-  <transmission name="rear_wheel_left_trans">
+  <!-- <transmission name="rear_wheel_left_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <actuator name="$rear_wheel_left_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -848,7 +869,7 @@
     <joint name="rear_right_wheel_joint">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
-  </transmission>
+  </transmission> -->
   <transmission name="steering_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <actuator name="$steering_motor">

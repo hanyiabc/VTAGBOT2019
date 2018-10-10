@@ -1,8 +1,22 @@
 <launch>
   <node pkg="joy" type="joy_node" name="joy" />
   <node pkg="atvsim_control" type="controller_adaptor" name="adaptor" />
-  <node pkg="Joy_Translate" type="joy_translate" name="joy_translate" />
-  <node pkg="quarternion_conversion" type="conversion_node" name="quarternion_conversion" />
-
+  <node pkg="Joy_Translate" type="joy_translate" name="joy_translate" >
+  </node>
+  <node pkg="post_gazebo" type="post_gazebo" name="post_gazebo_node" />
+  <!-- <node pkg="pid" type="controller" name="speed_controller">
+    <param name="Kp" value="5.0" />
+    <param name="Ki" value="0.0" />
+    <param name="Kd" value="0.1" />
+    <param name="upper_limit" value="10" />
+    <param name="lower_limit" value="-10" />
+    <param name="windup_limit" value="10" />
+    <param name="cutoff_frequency" value="20" />
+    <param name="max_loop_frequency" value="105.0" />
+    <param name="min_loop_frequency" value="95.0" />
+    <remap to="/target_speed" from="/setpoint"/>
+    <remap to="/GPS_speed" from="/state"/>
+    <remap from="/control_effort" to="pedal_effort_cmd"/>
+  </node> -->
   <include file="$(find atvsim_gazebo)/launch/gazebo_world.launch" />
 </launch>

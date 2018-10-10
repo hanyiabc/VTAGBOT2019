@@ -3,12 +3,17 @@
 
 #include <tf/tf.h>
 #include <sensor_msgs/Imu.h>
+#include <geometry_msgs/Vector3Stamped.h>
+#include <std_msgs/Float64.h>
 #include <geometry_msgs/Vector3.h>
+#include <cmath>
 
 ros::Publisher pub_rpy_;
+ros::Publisher pub_gps_;
+geometry_msgs::Vector3 rpy;
+
 
 void imuCallback_(const sensor_msgs::Imu::ConstPtr msg) {
-    geometry_msgs::Vector3 rpy;
 
     tf::Quaternion q(
         msg->orientation.x,
@@ -25,14 +30,27 @@ void imuCallback_(const sensor_msgs::Imu::ConstPtr msg) {
     pub_rpy_.publish(rpy);
 }
 
+void gpsCallback_(const geometry_msgs::Vector3Stamped::ConstPtr msg)
+{
+  std_msgs::Float64 speed;
+  speed.data = sqrt(pow(msg->vector.x,2) + pow(msg->vector.y,2));
+  if (rpy.z * msg->vector.y < 0)
+  {
+    speed.data = -speed.data;
+  }
+  pub_gps_.publish(speed);
+}
+
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "conversion_node");
 
     ros::NodeHandle nh_;
-
+    rpy.x = 0; rpy.y = 0; rpy.z = 0;
     ros::Subscriber sub_imu_ = nh_.subscribe("/imu", 1, imuCallback_);
+    ros::Subscriber sub_speed_ = nh_.subscribe("/fix_velocity", 1, gpsCallback_);
     pub_rpy_ = nh_.advertise<geometry_msgs::Vector3>("IMU_rpy", 1);
+    pub_gps_ = nh_.advertise<std_msgs::Float64>("GPS_speed", 1);
 
     ros::spin();
 
