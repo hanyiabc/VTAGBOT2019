@@ -1,0 +1,8 @@
+prefix=/home/hongxu/atv_ws/install
+
+Name: agbot_nav
+Description: Description of agbot_nav
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/hongxu/atv_ws/install/lib 
+Requires: 

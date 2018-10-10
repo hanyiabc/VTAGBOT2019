@@ -4,6 +4,7 @@
 post_gazebo/CMakeFiles/post_gazebo.dir/src/post_gazebo.cpp.o
  /home/hongxu/atv_ws/src/post_gazebo/src/post_gazebo.cpp
  /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Point32.h
  /opt/ros/melodic/include/geometry_msgs/PointStamped.h
  /opt/ros/melodic/include/geometry_msgs/Pose.h
  /opt/ros/melodic/include/geometry_msgs/PoseStamped.h

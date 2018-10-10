@@ -83,6 +83,14 @@
 /home/hongxu/atv_ws/build/Joy_Translate/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 /home/hongxu/atv_ws/build/Joy_Translate/CMakeFiles/roscpp_generate_messages_nodejs.dir
 /home/hongxu/atv_ws/build/Joy_Translate/CMakeFiles/std_msgs_generate_messages_py.dir
+/home/hongxu/atv_ws/build/navigation/CMakeFiles/install/strip.dir
+/home/hongxu/atv_ws/build/navigation/CMakeFiles/install/local.dir
+/home/hongxu/atv_ws/build/navigation/CMakeFiles/test.dir
+/home/hongxu/atv_ws/build/navigation/CMakeFiles/list_install_components.dir
+/home/hongxu/atv_ws/build/navigation/CMakeFiles/agbot_nav_node.dir
+/home/hongxu/atv_ws/build/navigation/CMakeFiles/edit_cache.dir
+/home/hongxu/atv_ws/build/navigation/CMakeFiles/rebuild_cache.dir
+/home/hongxu/atv_ws/build/navigation/CMakeFiles/install.dir
 /home/hongxu/atv_ws/build/atvsim_gazebo/CMakeFiles/install.dir
 /home/hongxu/atv_ws/build/atvsim_gazebo/CMakeFiles/list_install_components.dir
 /home/hongxu/atv_ws/build/atvsim_gazebo/CMakeFiles/edit_cache.dir

@@ -5,12 +5,12 @@
 #include <sensor_msgs/Imu.h>
 #include <geometry_msgs/Vector3Stamped.h>
 #include <std_msgs/Float64.h>
-#include <geometry_msgs/Vector3.h>
+#include <geometry_msgs/Point32.h>
 #include <cmath>
 
 ros::Publisher pub_rpy_;
 ros::Publisher pub_gps_;
-geometry_msgs::Vector3 rpy;
+geometry_msgs::Point32 rpy;
 
 
 void imuCallback_(const sensor_msgs::Imu::ConstPtr msg) {
@@ -49,7 +49,7 @@ int main(int argc, char **argv)
     rpy.x = 0; rpy.y = 0; rpy.z = 0;
     ros::Subscriber sub_imu_ = nh_.subscribe("/imu", 1, imuCallback_);
     ros::Subscriber sub_speed_ = nh_.subscribe("/fix_velocity", 1, gpsCallback_);
-    pub_rpy_ = nh_.advertise<geometry_msgs::Vector3>("IMU_rpy", 1);
+    pub_rpy_ = nh_.advertise<geometry_msgs::Point32>("IMU_rpy", 1);
     pub_gps_ = nh_.advertise<std_msgs::Float64>("GPS_speed", 1);
 
     ros::spin();

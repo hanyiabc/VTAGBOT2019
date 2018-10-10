@@ -20,7 +20,7 @@
     <child link="front_left_wheel"/>
     <origin rpy="-3.09079  0       0" xyz="0      -0.00818 -0.21562"/>
     <axis xyz="0   0.00083   1"/>
-    <dynamics damping="10" friction="10"/>
+    <dynamics damping="10" friction="5"/>
     <limit effort="0" velocity="0"/>
   </joint>
   <joint name="front_right_steering_joint" type="revolute">
@@ -37,23 +37,23 @@
     <origin rpy="-0.05079  0       0" xyz="0      -0.00818  0.21562"/>
     <axis xyz="0   0.000083  -1"/>
     <limit effort="0" velocity="0"/>
-    <dynamics damping="10" friction="10"/>
+    <dynamics damping="10" friction="5"/>
   </joint>
   <joint name="rear_left_wheel_joint" type="continuous">
     <parent link="chassis"/>
     <child link="rear_left_wheel"/>
     <origin rpy="-1.52  0    0" xyz="-0.99377  0.71562  0.34697"/>
     <axis xyz="0   0.00083   1"/>
-    <dynamics damping="10" friction="10"/>
-    <limit effort="750" velocity="15"/>
+    <dynamics damping="10" friction="5"/>
+    <limit effort="10000" velocity="1000"/>
   </joint>
   <joint name="rear_right_wheel_joint" type="continuous">
     <parent link="chassis"/>
     <child link="rear_right_wheel"/>
     <origin rpy="1.52  0    0" xyz="-0.99377 -0.71562  0.34697"/>
     <axis xyz="0   0.00083  -1"/>
-    <dynamics damping="10" friction="10"/>
-    <limit effort="750" velocity="15"/>
+    <dynamics damping="10" friction="5"/>
+    <limit effort="10000" velocity="1000"/>
   </joint>
   <!-- <joint name="front_left_rod_joint" type="revolute">
     <parent link="steering_rod"/>

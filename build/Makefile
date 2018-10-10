@@ -636,6 +636,19 @@ std_msgs_generate_messages_py/fast:
 .PHONY : std_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named agbot_nav_node
+
+# Build rule for target.
+agbot_nav_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 agbot_nav_node
+.PHONY : agbot_nav_node
+
+# fast build rule for target.
+agbot_nav_node/fast:
+	$(MAKE) -f navigation/CMakeFiles/agbot_nav_node.dir/build.make navigation/CMakeFiles/agbot_nav_node.dir/build
+.PHONY : agbot_nav_node/fast
+
+#=============================================================================
 # Target rules for targets named trajectory_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -1321,6 +1334,7 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... agbot_nav_node"
 	@echo "... trajectory_msgs_generate_messages_nodejs"
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_eus"

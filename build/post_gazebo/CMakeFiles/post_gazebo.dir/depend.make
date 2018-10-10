@@ -3,6 +3,7 @@
 
 post_gazebo/CMakeFiles/post_gazebo.dir/src/post_gazebo.cpp.o: /home/hongxu/atv_ws/src/post_gazebo/src/post_gazebo.cpp
 post_gazebo/CMakeFiles/post_gazebo.dir/src/post_gazebo.cpp.o: /opt/ros/melodic/include/geometry_msgs/Point.h
+post_gazebo/CMakeFiles/post_gazebo.dir/src/post_gazebo.cpp.o: /opt/ros/melodic/include/geometry_msgs/Point32.h
 post_gazebo/CMakeFiles/post_gazebo.dir/src/post_gazebo.cpp.o: /opt/ros/melodic/include/geometry_msgs/PointStamped.h
 post_gazebo/CMakeFiles/post_gazebo.dir/src/post_gazebo.cpp.o: /opt/ros/melodic/include/geometry_msgs/Pose.h
 post_gazebo/CMakeFiles/post_gazebo.dir/src/post_gazebo.cpp.o: /opt/ros/melodic/include/geometry_msgs/PoseStamped.h
