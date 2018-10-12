@@ -217,7 +217,6 @@ navigation/CMakeFiles/agbot_nav_node.dir/src/PPController.cpp.o: /usr/include/ei
 navigation/CMakeFiles/agbot_nav_node.dir/src/PPController.cpp.o: /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
 navigation/CMakeFiles/agbot_nav_node.dir/src/agbot_nav.cpp.o: /home/hongxu/atv_ws/src/navigation/src/PPController.h
-navigation/CMakeFiles/agbot_nav_node.dir/src/agbot_nav.cpp.o: /home/hongxu/atv_ws/src/navigation/src/UTM.h
 navigation/CMakeFiles/agbot_nav_node.dir/src/agbot_nav.cpp.o: /home/hongxu/atv_ws/src/navigation/src/agbot_nav.cpp
 navigation/CMakeFiles/agbot_nav_node.dir/src/agbot_nav.cpp.o: /opt/ros/melodic/include/geometry_msgs/Point.h
 navigation/CMakeFiles/agbot_nav_node.dir/src/agbot_nav.cpp.o: /opt/ros/melodic/include/geometry_msgs/Point32.h

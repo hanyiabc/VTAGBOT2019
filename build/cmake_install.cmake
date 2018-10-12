@@ -129,6 +129,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/hongxu/atv_ws/build/atvsim_gazebo/cmake_install.cmake")
   include("/home/hongxu/atv_ws/build/post_gazebo/cmake_install.cmake")
   include("/home/hongxu/atv_ws/build/atvsim_control/cmake_install.cmake")
+  include("/home/hongxu/atv_ws/build/waypoint_recorder/cmake_install.cmake")
 
 endif()
 

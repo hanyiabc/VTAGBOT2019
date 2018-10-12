@@ -26,6 +26,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "post_gazebo/catkin_generated/package.cmake"
   "pysdf/catkin_generated/package.cmake"
   "pysdf/catkin_generated/setup_py_interrogation.cmake"
+  "waypoint_recorder/catkin_generated/ordered_paths.cmake"
+  "waypoint_recorder/catkin_generated/package.cmake"
   "/home/hongxu/atv_ws/src/CMakeLists.txt"
   "/home/hongxu/atv_ws/src/Joy_Translate/CMakeLists.txt"
   "/home/hongxu/atv_ws/src/Joy_Translate/package.xml"
@@ -42,6 +44,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/hongxu/atv_ws/src/pysdf/CMakeLists.txt"
   "/home/hongxu/atv_ws/src/pysdf/package.xml"
   "/home/hongxu/atv_ws/src/pysdf/setup.py"
+  "/home/hongxu/atv_ws/src/waypoint_recorder/CMakeLists.txt"
+  "/home/hongxu/atv_ws/src/waypoint_recorder/package.xml"
   "/opt/ros/melodic/share/actionlib/cmake/actionlib-msg-extras.cmake"
   "/opt/ros/melodic/share/actionlib/cmake/actionlibConfig-version.cmake"
   "/opt/ros/melodic/share/actionlib/cmake/actionlibConfig.cmake"
@@ -292,6 +296,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "atvsim_gazebo/CMakeFiles/CMakeDirectoryInformation.cmake"
   "post_gazebo/CMakeFiles/CMakeDirectoryInformation.cmake"
   "atvsim_control/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "waypoint_recorder/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -382,4 +387,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir/DependInfo.cmake"
   "atvsim_control/CMakeFiles/controller_adaptor.dir/DependInfo.cmake"
   "atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/DependInfo.cmake"
+  "waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/DependInfo.cmake"
   )

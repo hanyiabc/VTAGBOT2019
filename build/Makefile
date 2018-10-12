@@ -1285,6 +1285,19 @@ controller_manager_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/build.make atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/build
 .PHONY : controller_manager_msgs_generate_messages_lisp/fast
 
+#=============================================================================
+# Target rules for targets named waypoint_recorder_node
+
+# Build rule for target.
+waypoint_recorder_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 waypoint_recorder_node
+.PHONY : waypoint_recorder_node
+
+# fast build rule for target.
+waypoint_recorder_node/fast:
+	$(MAKE) -f waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/build.make waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/build
+.PHONY : waypoint_recorder_node/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1384,6 +1397,7 @@ help:
 	@echo "... controller_manager_msgs_generate_messages_cpp"
 	@echo "... controller_adaptor"
 	@echo "... controller_manager_msgs_generate_messages_lisp"
+	@echo "... waypoint_recorder_node"
 .PHONY : help
 
 

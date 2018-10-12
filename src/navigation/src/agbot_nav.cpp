@@ -4,7 +4,6 @@
 #include "geometry_msgs/Point32.h"
 #include "sensor_msgs/NavSatFix.h"
 #include "nav_msgs/Odometry.h"
-#include "UTM.h"
 #include <iostream>
 using namespace std;
 
@@ -13,8 +12,7 @@ using namespace std;
 Point currentPosition;
 
 
-//filename selection
-const string file_name = "/home/hongxu/atv_ws/src/navigation/src/waypoints_5_7_3.txt";
+
 
 //callback functions
 
@@ -22,7 +20,7 @@ void pose_callback(const nav_msgs::Odometry:: ConstPtr& msg)
 {
 
 
-	ROS_INFO("UTM_x: %f\tUTM_y: %f", msg->pose.pose.position.x, msg->pose.pose.position.y);
+	//ROS_INFO("UTM_x: %f\tUTM_y: %f", msg->pose.pose.position.x, msg->pose.pose.position.y);
 
 	currentPosition.x = msg->pose.pose.position.x;
 	currentPosition.y = msg->pose.pose.position.y;
@@ -33,23 +31,32 @@ void pose_callback(const nav_msgs::Odometry:: ConstPtr& msg)
 void heading_callback(const geometry_msgs::Point32:: ConstPtr& msg){
 
 	currentPosition.inputHeading=msg->z;
-    ROS_INFO("x: %f\ty: %f\tz: %f", msg->x, msg->y, msg->z);
+    //ROS_INFO("x: %f\ty: %f\tz: %f", msg->x, msg->y, msg->z);
 	//cout<<currentPosition.inputHeading;
 }
 
 
 //execution function
 
-void execute(int argc, char **agrv,PPController cntrl)
+int execute(int argc, char **agrv,PPController cntrl)
 {
 //setup ros publishers and subscribers
 
-	double distance2Goal = 0.1;
+	double distance2Goal = 10000000;
 
 	//initialize ppcontroller node
 	ros::init(argc,agrv,"ppcontroller");
 
 	ros::NodeHandle nh;
+
+	string file_name;
+	nh.param<string>("/waypoint_file_name", file_name, "/home/hongxu/atv_ws/waypoints1.txt");
+
+	if (!cntrl.initialize(file_name))
+	{
+		return EXIT_FAILURE;
+	}
+
 	auto fix = nh.subscribe("/UTM", 500, pose_callback);
 	auto imu = nh.subscribe("/novatel_imu", 500, heading_callback);
 	//initialize publishers
@@ -78,17 +85,19 @@ void execute(int argc, char **agrv,PPController cntrl)
 	stationaryCommand.x=0;
 	stationaryCommand.y=0;
 	cout<< "Done Init, begin loop\n";
+	cout << "Total points is: " << cntrl.getnPts() <<endl;
 	//stops when ros is shutdown
-	ros::Rate loop_rate(10);
+	ros::Rate loop_rate(100);
 	while(ros::ok())
 	{
 		//compute the new Euclidean Error
 		current_goalPoint.x=goalPoint.x;
 		current_goalPoint.y=goalPoint.y;
 
-		cout <<"Current Index: "<< cntrl.getcurrWpIdx() << endl;
+		cout <<"\nCurrent Index: "<< cntrl.getcurrWpIdx() << endl;
 		pub_goal.publish(current_goalPoint);
-		ROS_INFO("x: %f\ty: %f\t", current_goalPoint.x, current_goalPoint.y);
+		//ROS_INFO("x: %f\ty: %f\t", current_goalPoint.x, current_goalPoint.y);
+		cout <<"Current Goal Point: "<< current_goalPoint.x << "\t" << current_goalPoint.y << "\n";
 		//Vehicule is in vicinity of goal point
 		if(distance2Goal < 0.2)
 		{
@@ -102,11 +111,15 @@ void execute(int argc, char **agrv,PPController cntrl)
 			}
 			else{
 				cout<<"\n --- All Waypoints have been conquered! Mission Accomplished Mr Hunt !!! --- " << endl;
+				delta.data=0;
+				vel.data=0;
+				pub_steering.publish(delta);
+		  	pub_padel.publish(vel);
 				break;
 			}
 		}
 
-		cout<<"\nNew Goal is:\n"<<goalPoint.x<<goalPoint.y<<endl;
+		cout<<"New Goal is:"<<goalPoint.x << "\t"<<goalPoint.y<<endl;
 
 		cntrl.compute_steering_vel_cmds(currentPosition, velDouble, deltaDouble, distance2Goal);
 		//Delete THIS!!
@@ -114,16 +127,18 @@ void execute(int argc, char **agrv,PPController cntrl)
 		//DELETE THIS!!
 		delta.data=deltaDouble;
 		vel.data=velDouble;
-
+		cout<<"delta:\t"<<delta.data<<endl;
+		cout<<"vel:\t"<<vel.data<<endl;
 		pub_steering.publish(delta);
   	pub_padel.publish(vel);
-		ROS_INFO("delta: %f", delta);
-		ROS_INFO("vel: %f", vel);
+		//ROS_INFO("delta: %f", delta);
+		//ROS_INFO("vel: %f", vel);
 
 		ros::spinOnce();
 		loop_rate.sleep();
 
 	}
+	return 0;
 }
 
 
@@ -132,12 +147,10 @@ int main(int argc, char **agrv)
     //cout << "HI!";
 	AckermannVehicle mule = AckermannVehicle(2.065, 4.6, 2.2);
 	PPController cntrl = PPController(0, mule.length, mule.minTurningRadius, mule.maximumVelocity);
+	//filename selection
 
-	if (!cntrl.initialize(file_name))
-	{
-		return EXIT_FAILURE;
-	}
-	double distance2Goal = 100000000;
+
+
 
 
 

@@ -3086,6 +3086,61 @@ clean: atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory waypoint_recorder
+
+# Convenience name for "all" pass in the directory.
+waypoint_recorder/all: waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/all
+
+.PHONY : waypoint_recorder/all
+
+# Convenience name for "clean" pass in the directory.
+waypoint_recorder/clean: waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/clean
+
+.PHONY : waypoint_recorder/clean
+
+# Convenience name for "preinstall" pass in the directory.
+waypoint_recorder/preinstall:
+
+.PHONY : waypoint_recorder/preinstall
+
+#=============================================================================
+# Target rules for target waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir
+
+# All Build rule for target.
+waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/all:
+	$(MAKE) -f waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/build.make waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/depend
+	$(MAKE) -f waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/build.make waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hongxu/atv_ws/build/CMakeFiles --progress-num=21,22 "Built target waypoint_recorder_node"
+.PHONY : waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/all
+
+# Include target in all.
+all: waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hongxu/atv_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hongxu/atv_ws/build/CMakeFiles 0
+.PHONY : waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/rule
+
+# Convenience name for target.
+waypoint_recorder_node: waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/rule
+
+.PHONY : waypoint_recorder_node
+
+# clean rule for target.
+waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/clean:
+	$(MAKE) -f waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/build.make waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/clean
+.PHONY : waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/clean
+
+# clean rule for target.
+clean: waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

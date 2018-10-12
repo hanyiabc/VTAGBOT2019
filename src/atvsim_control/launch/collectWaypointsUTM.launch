@@ -1,0 +1,12 @@
+<launch>
+  <node pkg="gps_common" type="utm_odometry_node" name="GPS2UTM" >
+    <remap from="/odom" to="/UTM"/>
+  </node>
+  <node pkg="waypoint_recorder" type="waypoint_recorder_node" name="waypoint_recorder" >
+    <rosparam>
+      waypoint_file_name: "/home/hongxu/atv_ws/waypoints1.txt"
+      start_recording: 0
+    </rosparam>
+  </node>
+  <include file="$(find atvsim_control)/launch/joyControl.launch" />
+</launch>

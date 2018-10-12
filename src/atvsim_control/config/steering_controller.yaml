@@ -3,6 +3,6 @@ joint: front_right_steering_joint
 /gazebo_ros_control:
   pid_gains:
     front_right_steering_joint:
-      p: 20.0
+      p: 10000
       i: 0.001
-      d: 70.0
+      d: 1000

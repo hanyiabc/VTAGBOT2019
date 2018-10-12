@@ -67,37 +67,40 @@ void PPController::compute_steering_vel_cmds(Point current, double &vel, double 
     vecRobot2WP(0,0) = this->wpList[this->currWpIdx].x - current.x;
     vecRobot2WP(1,0) = this->wpList[this->currWpIdx].y - current.y;
     Vector2d vecCurHeading = Vector2d::Zero(2,1);
-    vecRobot2WP(0,0) = this->wpList[this->currWpIdx].x-current.x;
-    vecRobot2WP(1,0) = this->wpList[this->currWpIdx].y - current.y;
-    
+    // vecRobot2WP(0,0) = this->wpList[this->currWpIdx].x-current.x;
+    // vecRobot2WP(1,0) = this->wpList[this->currWpIdx].y - current.y;
+
     vecCurHeading(0,0) = cos(this->tgtHeading[this->currWpIdx]);
     vecCurHeading(1,0) = sin(this->tgtHeading[this->currWpIdx]);
-    distance2Goal = vecRobot2WP.dot(vecCurHeading);
-    cout<<"distance2Goal" << distance2Goal << "\n";
+    // distance2Goal = vecRobot2WP.transpose().dot(vecCurHeading.normalized());
+    distance2Goal = vecRobot2WP.dot(vecCurHeading.normalized());
+
+    cout<<"distance2Goal:\t" << distance2Goal << "\n";
 
     //Compute the minimum distance from the current segment:
     //change this
     double minDist = vecRobot2WP.dot(segNormVecList.col(currWpIdx));
     double theta_gain = this->k_theta * minDist;
-        if (theta_gain > M_PI /2)
-        {
-            theta_gain = M_PI/2;
-        }
-        if(theta_gain < -M_PI/2)
-        {
-            theta_gain = -M_PI/2;    
-        }
-        cout << "minDist = " << minDist << "\n";
-        cout << "theta_gain = " << theta_gain << "\n";
+    if (theta_gain > M_PI /2)
+    {
+        theta_gain = M_PI/2;
+    }
+    if(theta_gain < -M_PI/2)
+    {
+        theta_gain = -M_PI/2;
+    }
+    cout << "minDist = " << minDist << "\n";
+    cout << "theta_gain = " << theta_gain << "\n";
         //Compute the desired heading angle based of target heading and the min dist:
-        double theta_des = this->tgtHeading[this->currWpIdx] + theta_gain;
+    double theta_des = this->tgtHeading[this->currWpIdx] + theta_gain;
 
-        cout << "Theta des = " << theta_des << "\n";
+    cout << "Theta des = " << theta_des << "\n"; //theta des use global reference
         //Compute the steering agle command:
 
         //change this
-        double heading_err = theta_des - current.inputHeading;
-
+    double heading_err = theta_des - current.inputHeading;
+    cout << "current Heading:\t" << current.inputHeading << "\n";
+    cout << "headding error\t" << heading_err << "\n";
         if(heading_err > M_PI)
         {
             heading_err = heading_err - 2 * M_PI;
@@ -110,7 +113,7 @@ void PPController::compute_steering_vel_cmds(Point current, double &vel, double 
         //Compute forward velocity:
         vel = this->maximumVelocity - abs(this->k_vel * delta);
 
-        
+
         if (vel < this->minVelocity)
             vel = this->minVelocity;
         if (delta > 1)
@@ -125,12 +128,12 @@ double PPController::compute_steering_angle()
     // Steering angle = atan(L/R)
     return atan(length / turningRadius);
 
-}    
+}
 
 // compute forward velocity relative to steering angle
 double PPController::compute_forward_velocity()
 {
-    // forwardVelocity = mule.maximumVelocity * (1 - atan(abs(steeringAngle))/(pi/2));  
+    // forwardVelocity = mule.maximumVelocity * (1 - atan(abs(steeringAngle))/(pi/2));
     //this specifies the forward velocity at a given steering angle
     double forwardVelocity = 0.4;
     return forwardVelocity;
@@ -160,5 +163,5 @@ vector<Point> PPController::getwpList()
 
 PPController::~PPController()
 {
-    
+
 }

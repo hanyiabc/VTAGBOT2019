@@ -24,10 +24,6 @@ string
 Eigen/Dense
 -
 
-/home/hongxu/atv_ws/src/navigation/src/UTM.h
-math.h
--
-
 /home/hongxu/atv_ws/src/navigation/src/agbot_nav.cpp
 PPController.h
 /home/hongxu/atv_ws/src/navigation/src/PPController.h
@@ -41,8 +37,6 @@ sensor_msgs/NavSatFix.h
 /home/hongxu/atv_ws/src/navigation/src/sensor_msgs/NavSatFix.h
 nav_msgs/Odometry.h
 /home/hongxu/atv_ws/src/navigation/src/nav_msgs/Odometry.h
-UTM.h
-/home/hongxu/atv_ws/src/navigation/src/UTM.h
 iostream
 -
 

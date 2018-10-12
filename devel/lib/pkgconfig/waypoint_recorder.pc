@@ -1,0 +1,8 @@
+prefix=/home/hongxu/atv_ws/devel
+
+Name: waypoint_recorder
+Description: Description of waypoint_recorder
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/hongxu/atv_ws/devel/lib 
+Requires: 

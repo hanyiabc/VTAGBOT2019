@@ -161,3 +161,11 @@
 /home/hongxu/atv_ws/build/atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir
 /home/hongxu/atv_ws/build/atvsim_control/CMakeFiles/controller_adaptor.dir
 /home/hongxu/atv_ws/build/atvsim_control/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir
+/home/hongxu/atv_ws/build/waypoint_recorder/CMakeFiles/install/strip.dir
+/home/hongxu/atv_ws/build/waypoint_recorder/CMakeFiles/install/local.dir
+/home/hongxu/atv_ws/build/waypoint_recorder/CMakeFiles/test.dir
+/home/hongxu/atv_ws/build/waypoint_recorder/CMakeFiles/list_install_components.dir
+/home/hongxu/atv_ws/build/waypoint_recorder/CMakeFiles/edit_cache.dir
+/home/hongxu/atv_ws/build/waypoint_recorder/CMakeFiles/rebuild_cache.dir
+/home/hongxu/atv_ws/build/waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir
+/home/hongxu/atv_ws/build/waypoint_recorder/CMakeFiles/install.dir
