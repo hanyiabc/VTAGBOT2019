@@ -1,8 +1,0 @@
-prefix=/home/hongxu/atv_ws/install
-
-Name: pysdf
-Description: Description of pysdf
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/hongxu/atv_ws/install/lib 
-Requires: 

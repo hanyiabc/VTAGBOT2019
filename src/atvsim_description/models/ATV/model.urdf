@@ -1,14 +1,14 @@
 <?xml version="1.0" ?>
 <robot name="ATV">
   <joint name="ATV/imu_joint" type="fixed">
-    <parent link="chassis"/>
+    <parent link="base_link"/>
     <child link="ATV/imu_link"/>
     <origin rpy="0  0  0" xyz="0  0  0"/>
     <axis xyz="1  0  0"/>
     <limit effort="0.0" lower="0.0" upper="0.0" velocity="0.0"/>
   </joint>
   <joint name="front_left_steering_joint" type="revolute">
-    <parent link="chassis"/>
+    <parent link="base_link"/>
     <child link="front_left_wheel_steering_block"/>
     <origin rpy="1.57079  0       0" xyz="1.20222  0.5      0.35515"/>
     <axis xyz="0  1  0"/>
@@ -24,7 +24,7 @@
     <limit effort="0" velocity="0"/>
   </joint>
   <joint name="front_right_steering_joint" type="revolute">
-    <parent link="chassis"/>
+    <parent link="base_link"/>
     <child link="front_right_wheel_steering_block"/>
     <origin rpy="1.57079  0       0" xyz="1.20222 -0.5      0.35515"/>
     <axis xyz="0  1  0"/>
@@ -40,7 +40,7 @@
     <dynamics damping="10" friction="5"/>
   </joint>
   <joint name="rear_left_wheel_joint" type="continuous">
-    <parent link="chassis"/>
+    <parent link="base_link"/>
     <child link="rear_left_wheel"/>
     <origin rpy="-1.52  0    0" xyz="-0.99377  0.71562  0.34697"/>
     <axis xyz="0   0.00083   1"/>
@@ -48,7 +48,7 @@
     <limit effort="10000" velocity="1000"/>
   </joint>
   <joint name="rear_right_wheel_joint" type="continuous">
-    <parent link="chassis"/>
+    <parent link="base_link"/>
     <child link="rear_right_wheel"/>
     <origin rpy="1.52  0    0" xyz="-0.99377 -0.71562  0.34697"/>
     <axis xyz="0   0.00083  -1"/>
@@ -81,6 +81,13 @@
     <child link="steering_rod_right_block"/>
     <origin rpy="1.57079  0       0" xyz="-0.5 0 -0.11"/>
     <axis xyz="0  0  1"/>
+    <limit effort="0.0" lower="0" upper="0" velocity="0.0"/>
+  </joint>
+  <joint name="camera_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <axis xyz="0 1 0" />
+    <origin xyz="0.35 0 1.9" rpy="0 0 0"/>
     <limit effort="0.0" lower="0" upper="0" velocity="0.0"/>
   </joint>
   <!-- <joint name="front_right_left_steering_rod_joint" type="fixed">
@@ -129,41 +136,41 @@
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint> -->
   <!-- <joint name="gas_joint" type="prismatic">
-    <parent link="chassis"/>
+    <parent link="base_link"/>
     <child link="gas_pedal"/>
     <origin rpy="0  0  0" xyz="0.63     0.1      0.57999"/>
     <axis xyz="0.7071  0     -0.7071"/>
     <limit effort="0.0" lower="0.0" upper="0.08" velocity="0.0"/>
   </joint>
   <joint name="brake_joint" type="prismatic">
-    <parent link="chassis"/>
+    <parent link="base_link"/>
     <child link="brake_pedal"/>
     <origin rpy="0  0  0" xyz="0.64     0.27     0.57999"/>
     <axis xyz="0.85749  0      -0.51449"/>
     <limit effort="0.0" lower="0.0" upper="0.08" velocity="0.0"/>
   </joint>
   <joint name="steering_joint" type="revolute">
-    <parent link="chassis"/>
+    <parent link="base_link"/>
     <child link="steering_wheel"/>
     <origin rpy="0   -0.87  0" xyz="0.42  0.46  1.2"/>
     <axis xyz="0  0  1"/>
     <limit effort="0.0" lower="-3.14" upper="3.14" velocity="0.0"/>
   </joint>
   <joint name="hand_brake_joint" type="revolute">
-    <parent link="chassis"/>
+    <parent link="base_link"/>
     <child link="hand_brake"/>
     <origin rpy="0  0  0" xyz="0.53   0.205  1.05"/>
     <axis xyz="0 -1  0"/>
     <limit effort="0.0" lower="0.0" upper="0.6" velocity="0.0"/>
   </joint>
   <joint name="FNR_switch_joint" type="revolute">
-    <parent link="chassis"/>
+    <parent link="base_link"/>
     <child link="FNR_switch"/>
     <origin rpy="0    0.25  0" xyz="0.54     0.1      1.14999"/>
     <axis xyz="0 -1  0"/>
     <limit effort="0.0" lower="-0.3" upper="0.3" velocity="0.0"/>
   </joint> -->
-  <link name="chassis">
+  <link name="base_link">
     <inertial>
       <mass value="720.0"/>
       <origin rpy="0  0  0" xyz="0.1  0   0.4"/>
@@ -596,6 +603,61 @@
       </geometry>
     </visual>
   </link>
+
+
+  <joint name="hokuyo_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="1.2 0 1.1" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="hokuyo_link"/>
+  </joint>
+
+  <!-- Hokuyo Laser -->
+  <link name="hokuyo_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 3.14159265"/>
+      <geometry>
+    <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://atvsim_description/models/ATV/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+  <!-- Camera -->
+  <link name="camera_link">
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+    <collision name="collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+
+    <visual name="camera_front">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+  </link>
   <!-- <link name="steering_wheel">
     <inertial>
       <mass value="1.0"/>
@@ -797,11 +859,81 @@
       </surface>
     </collision>
   </gazebo>
+  <!-- camera -->
+  <gazebo reference="camera_link">
+    <material>Gazebo/red</material>
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+       <horizontal_fov>1.3962634</horizontal_fov>
+       <image>
+         <width>800</width>
+         <height>800</height>
+         <format>R8G8B8</format>
+       </image>
+       <clip>
+         <near>0.02</near>
+         <far>300</far>
+       </clip>
+       <noise>
+         <type>gaussian</type>
+         <mean>0.0</mean>
+         <stddev>0.007</stddev>
+       </noise>
+     </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>front_camera</cameraName>
+        <imageTopicName>front_image_raw</imageTopicName>
+        <cameraInfoTopicName>front_camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+     </plugin>
+   </sensor>
+  </gazebo>
+  <!-- hokuyo -->
+  <gazebo reference="hokuyo_link">
+    <sensor type="gpu_ray" name="head_hokuyo_sensor">
+    <pose>0 0 0 0 0 0</pose>
+    <visualize>false</visualize>
+    <update_rate>40</update_rate>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>720</samples>
+          <resolution>1</resolution>
+          <min_angle>-1.570796</min_angle>
+          <max_angle>1.570796</max_angle>
+        </horizontal>
+      </scan>
+      <range>
+        <min>0.10</min>
+        <max>30.0</max>
+        <resolution>0.01</resolution>
+      </range>
+      <noise>
+        <type>gaussian</type>
+        <mean>0.0</mean>
+        <stddev>0.01</stddev>
+      </noise>
+    </ray>
+    <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
+      <topicName>scan</topicName>
+      <frameName>hokuyo_link</frameName>
+    </plugin>
+  </sensor>
+  </gazebo>
   <gazebo>
     <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
       <alwayson>true</alwayson>
       <updaterate>50</updaterate>
-      <bodyname>chassis</bodyname>
+      <bodyname>base_link</bodyname>
       <topicname>/fix</topicname>
       <velocitytopicname>/fix_velocity</velocitytopicname>
       <referenceLatitude>37.228369</referenceLatitude>
@@ -848,7 +980,7 @@
       <commandTopic>rear_wheel_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
-      <robotBaseFrame>chassis</robotBaseFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
     </plugin>
 
   </gazebo>

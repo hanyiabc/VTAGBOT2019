@@ -48,7 +48,7 @@ private:
     double leadDistance, length, turningRadius, maximumVelocity;//set the length for ppcontroller as the length of maximumSteeringAngle
 
     //List of waypoints: From start to end:
-	
+
     vector<Point> wpList;
     //Current target waypoint index:
     size_t currWpIdx;
@@ -71,9 +71,9 @@ private:
 public:
     PPController(double inputLeadDistance, double inputLength = 2.065, double inputMinTurningRadius = 4.6, double inputMaximumVelocity = 0.5);
     bool initialize(string filename);
-    
+
     //Function to compute steering angle and forward velocity commands:
-    //References are all return values  
+    //References are all return values
     void compute_steering_vel_cmds(Point current, double &vel, double &delta, double &distance2Goal);
 
     //compute the steering radius of ackerman vehicle of given parameters
@@ -81,7 +81,7 @@ public:
 
     //compute the steering angle of ackermann vehicle of given paramters
     double compute_steering_angle();
-    
+
     //compute forward velocity relative to steering angle
     double compute_forward_velocity(); //added a variable velocity based on Bijo's suggestion
 
@@ -92,6 +92,7 @@ public:
     size_t getnPts();
     vector<Point> getwpList();
     void incrimentWpIdx();
+    void resetWpIdx();
     ~PPController();
 };
 

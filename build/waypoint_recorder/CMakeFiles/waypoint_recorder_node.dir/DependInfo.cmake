@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hongxu/atv_ws/src/waypoint_recorder/src/waypointRecorder.cpp" "/home/hongxu/atv_ws/build/waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/src/waypointRecorder.cpp.o"
+  "/home/hongxu/VTAGBOT2019/src/waypoint_recorder/src/waypointRecorder.cpp" "/home/hongxu/VTAGBOT2019/build/waypoint_recorder/CMakeFiles/waypoint_recorder_node.dir/src/waypointRecorder.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

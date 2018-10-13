@@ -152,6 +152,10 @@ void PPController::incrimentWpIdx()
 {
     currWpIdx++;
 }
+void PPController::resetWpIdx()
+{
+    currWpIdx=0;
+}
 size_t PPController::getnPts()
 {
     return this->wpList.size();

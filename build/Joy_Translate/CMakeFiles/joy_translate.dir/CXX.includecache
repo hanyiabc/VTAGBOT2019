@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/hongxu/atv_ws/src/Joy_Translate/src/joyTranslate.cpp
+/home/hongxu/VTAGBOT2019/src/Joy_Translate/src/joyTranslate.cpp
 ros/ros.h
-/home/hongxu/atv_ws/src/Joy_Translate/src/ros/ros.h
+/home/hongxu/VTAGBOT2019/src/Joy_Translate/src/ros/ros.h
 std_msgs/Float64.h
-/home/hongxu/atv_ws/src/Joy_Translate/src/std_msgs/Float64.h
+/home/hongxu/VTAGBOT2019/src/Joy_Translate/src/std_msgs/Float64.h
 std_msgs/Bool.h
-/home/hongxu/atv_ws/src/Joy_Translate/src/std_msgs/Bool.h
+/home/hongxu/VTAGBOT2019/src/Joy_Translate/src/std_msgs/Bool.h
 sensor_msgs/Joy.h
-/home/hongxu/atv_ws/src/Joy_Translate/src/sensor_msgs/Joy.h
+/home/hongxu/VTAGBOT2019/src/Joy_Translate/src/sensor_msgs/Joy.h
 
 /opt/ros/melodic/include/ros/advertise_options.h
 ros/forwards.h

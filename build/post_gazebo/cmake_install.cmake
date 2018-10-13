@@ -1,8 +1,8 @@
-# Install script for directory: /home/hongxu/atv_ws/src/post_gazebo
+# Install script for directory: /home/hongxu/VTAGBOT2019/src/post_gazebo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/hongxu/atv_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/hongxu/VTAGBOT2019/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hongxu/atv_ws/build/post_gazebo/catkin_generated/installspace/post_gazebo.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hongxu/VTAGBOT2019/build/post_gazebo/catkin_generated/installspace/post_gazebo.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/post_gazebo/cmake" TYPE FILE FILES
-    "/home/hongxu/atv_ws/build/post_gazebo/catkin_generated/installspace/post_gazeboConfig.cmake"
-    "/home/hongxu/atv_ws/build/post_gazebo/catkin_generated/installspace/post_gazeboConfig-version.cmake"
+    "/home/hongxu/VTAGBOT2019/build/post_gazebo/catkin_generated/installspace/post_gazeboConfig.cmake"
+    "/home/hongxu/VTAGBOT2019/build/post_gazebo/catkin_generated/installspace/post_gazeboConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/post_gazebo" TYPE FILE FILES "/home/hongxu/atv_ws/src/post_gazebo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/post_gazebo" TYPE FILE FILES "/home/hongxu/VTAGBOT2019/src/post_gazebo/package.xml")
 endif()
 

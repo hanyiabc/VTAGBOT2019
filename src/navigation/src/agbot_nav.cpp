@@ -50,7 +50,7 @@ int execute(int argc, char **agrv,PPController cntrl)
 	ros::NodeHandle nh;
 
 	string file_name;
-	nh.param<string>("/waypoint_file_name", file_name, "/home/hongxu/atv_ws/waypoints1.txt");
+	nh.param<string>("/waypoint_file_name", file_name, "/home/hongxu/VTAGBOT2019/waypoints1.txt");
 
 	if (!cntrl.initialize(file_name))
 	{
@@ -88,8 +88,14 @@ int execute(int argc, char **agrv,PPController cntrl)
 	cout << "Total points is: " << cntrl.getnPts() <<endl;
 	//stops when ros is shutdown
 	ros::Rate loop_rate(100);
+	int start = 0;
+	int restart = 0;
+
 	while(ros::ok())
 	{
+		nh.param<int>("/start_navigation", start, 0);
+		if (start == 1)
+		{
 		//compute the new Euclidean Error
 		current_goalPoint.x=goalPoint.x;
 		current_goalPoint.y=goalPoint.y;
@@ -99,6 +105,14 @@ int execute(int argc, char **agrv,PPController cntrl)
 		//ROS_INFO("x: %f\ty: %f\t", current_goalPoint.x, current_goalPoint.y);
 		cout <<"Current Goal Point: "<< current_goalPoint.x << "\t" << current_goalPoint.y << "\n";
 		//Vehicule is in vicinity of goal point
+
+
+		cout<<"New Goal is:"<<goalPoint.x << "\t"<<goalPoint.y<<endl;
+
+		cntrl.compute_steering_vel_cmds(currentPosition, velDouble, deltaDouble, distance2Goal);
+		//Delete THIS!!
+		// distance2Goal = 0.1;
+		//DELETE THIS!!
 		if(distance2Goal < 0.2)
 		{
 			//Update goal Point to next point in the waypoint list:
@@ -115,24 +129,37 @@ int execute(int argc, char **agrv,PPController cntrl)
 				vel.data=0;
 				pub_steering.publish(delta);
 		  	pub_padel.publish(vel);
-				break;
+				start = 0;
+				nh.setParam("/start_navigation", 0);
+				distance2Goal = 100000000;
+
 			}
 		}
-
-		cout<<"New Goal is:"<<goalPoint.x << "\t"<<goalPoint.y<<endl;
-
-		cntrl.compute_steering_vel_cmds(currentPosition, velDouble, deltaDouble, distance2Goal);
-		//Delete THIS!!
-		// distance2Goal = 0.1;
-		//DELETE THIS!!
 		delta.data=deltaDouble;
 		vel.data=velDouble;
 		cout<<"delta:\t"<<delta.data<<endl;
 		cout<<"vel:\t"<<vel.data<<endl;
-		pub_steering.publish(delta);
-  	pub_padel.publish(vel);
+
+		if (start == 1)
+		{
+			pub_steering.publish(delta);
+  		pub_padel.publish(vel);
+		}
+		}
 		//ROS_INFO("delta: %f", delta);
 		//ROS_INFO("vel: %f", vel);
+		nh.param<int>("/reset_navigation", restart, 0);
+		if(restart == 1)
+		{
+			cntrl.resetWpIdx();
+			nh.setParam("/reset_navigation", 0);
+			nh.param<string>("/waypoint_file_name", file_name, "/home/hongxu/VTAGBOT2019/waypoints1.txt");
+
+			if (!cntrl.initialize(file_name))
+			{
+				return EXIT_FAILURE;
+			}
+		}
 
 		ros::spinOnce();
 		loop_rate.sleep();

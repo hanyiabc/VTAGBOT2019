@@ -1,8 +1,8 @@
-# Install script for directory: /home/hongxu/atv_ws/src/atvsim_description
+# Install script for directory: /home/hongxu/VTAGBOT2019/src/atvsim_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/hongxu/atv_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/hongxu/VTAGBOT2019/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hongxu/atv_ws/build/atvsim_description/catkin_generated/installspace/atvsim_description.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hongxu/VTAGBOT2019/build/atvsim_description/catkin_generated/installspace/atvsim_description.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/atvsim_description/cmake" TYPE FILE FILES
-    "/home/hongxu/atv_ws/build/atvsim_description/catkin_generated/installspace/atvsim_descriptionConfig.cmake"
-    "/home/hongxu/atv_ws/build/atvsim_description/catkin_generated/installspace/atvsim_descriptionConfig-version.cmake"
+    "/home/hongxu/VTAGBOT2019/build/atvsim_description/catkin_generated/installspace/atvsim_descriptionConfig.cmake"
+    "/home/hongxu/VTAGBOT2019/build/atvsim_description/catkin_generated/installspace/atvsim_descriptionConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/atvsim_description" TYPE FILE FILES "/home/hongxu/atv_ws/src/atvsim_description/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/atvsim_description" TYPE FILE FILES "/home/hongxu/VTAGBOT2019/src/atvsim_description/package.xml")
 endif()
 

@@ -1,2 +1,2 @@
-Joy_Translate:atvsim_control:atvsim_description:atvsim_gazebo:navigation:post_gazebo:pysdf:waypoint_recorder
--DCATKIN_DEVEL_PREFIX=/home/hongxu/atv_ws/devel -DCMAKE_INSTALL_PREFIX=/home/hongxu/atv_ws/install -G Unix Makefiles
+Joy_Translate:atvsim_control:atvsim_description:atvsim_gazebo:navigation:post_gazebo:waypoint_recorder
+-DCATKIN_DEVEL_PREFIX=/home/hongxu/VTAGBOT2019/devel -DCMAKE_INSTALL_PREFIX=/home/hongxu/VTAGBOT2019/install -G Unix Makefiles

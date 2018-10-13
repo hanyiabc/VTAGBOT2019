@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hongxu/atv_ws/src
+CMAKE_SOURCE_DIR = /home/hongxu/VTAGBOT2019/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hongxu/atv_ws/build
+CMAKE_BINARY_DIR = /home/hongxu/VTAGBOT2019/build
 
 # Utility rule file for roscpp_generate_messages_cpp.
 
@@ -63,10 +63,10 @@ Joy_Translate/CMakeFiles/roscpp_generate_messages_cpp.dir/build: roscpp_generate
 .PHONY : Joy_Translate/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 
 Joy_Translate/CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
-	cd /home/hongxu/atv_ws/build/Joy_Translate && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/hongxu/VTAGBOT2019/build/Joy_Translate && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : Joy_Translate/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
 
 Joy_Translate/CMakeFiles/roscpp_generate_messages_cpp.dir/depend:
-	cd /home/hongxu/atv_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hongxu/atv_ws/src /home/hongxu/atv_ws/src/Joy_Translate /home/hongxu/atv_ws/build /home/hongxu/atv_ws/build/Joy_Translate /home/hongxu/atv_ws/build/Joy_Translate/CMakeFiles/roscpp_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/hongxu/VTAGBOT2019/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hongxu/VTAGBOT2019/src /home/hongxu/VTAGBOT2019/src/Joy_Translate /home/hongxu/VTAGBOT2019/build /home/hongxu/VTAGBOT2019/build/Joy_Translate /home/hongxu/VTAGBOT2019/build/Joy_Translate/CMakeFiles/roscpp_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Joy_Translate/CMakeFiles/roscpp_generate_messages_cpp.dir/depend
 

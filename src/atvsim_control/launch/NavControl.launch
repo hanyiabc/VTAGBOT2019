@@ -2,7 +2,9 @@
   <node pkg="gps_common" type="utm_odometry_node" name="GPS2UTM" >
     <remap from="/odom" to="/UTM"/>
   </node>
-  <!-- <node pkg="navigation" type="agbot_nav_node" name="navigation_node" /> -->
+  <node pkg="navigation" type="agbot_nav_node" name="navigation_node" />
+  <rosparam param="start_navigation">0</rosparam>
+  <rosparam param="reset_navigation">0</rosparam>
   <node pkg="atvsim_control" type="controller_adaptor" name="adaptor" >
     <remap to="/steering_cmd" from="/steering_pos_cmd"/>
     <remap to="/speed_setpoint" from="pedal_cmd"/>
