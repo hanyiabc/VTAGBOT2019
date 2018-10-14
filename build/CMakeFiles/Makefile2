@@ -1335,6 +1335,24 @@ clean: Joy_Translate/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory front_CV
+
+# Convenience name for "all" pass in the directory.
+front_CV/all:
+
+.PHONY : front_CV/all
+
+# Convenience name for "clean" pass in the directory.
+front_CV/clean:
+
+.PHONY : front_CV/clean
+
+# Convenience name for "preinstall" pass in the directory.
+front_CV/preinstall:
+
+.PHONY : front_CV/preinstall
+
+#=============================================================================
 # Directory level rules for directory navigation
 
 # Convenience name for "all" pass in the directory.

@@ -335,6 +335,12 @@ cpp_common_DIR:PATH=/opt/ros/melodic/share/cpp_common/cmake
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/melodic/share/dynamic_reconfigure/cmake
 
+//Value Computed by CMake
+front_CV_BINARY_DIR:STATIC=/home/hongxu/VTAGBOT2019/build/front_CV
+
+//Value Computed by CMake
+front_CV_SOURCE_DIR:STATIC=/home/hongxu/VTAGBOT2019/src/front_CV
+
 //The directory containing a CMake configuration file for gazebo_msgs.
 gazebo_msgs_DIR:PATH=/opt/ros/melodic/share/gazebo_msgs/cmake
 
@@ -638,7 +644,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=12
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

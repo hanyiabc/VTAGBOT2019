@@ -76,6 +76,13 @@
 /home/hongxu/VTAGBOT2019/build/Joy_Translate/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 /home/hongxu/VTAGBOT2019/build/Joy_Translate/CMakeFiles/roscpp_generate_messages_nodejs.dir
 /home/hongxu/VTAGBOT2019/build/Joy_Translate/CMakeFiles/std_msgs_generate_messages_py.dir
+/home/hongxu/VTAGBOT2019/build/front_CV/CMakeFiles/install/strip.dir
+/home/hongxu/VTAGBOT2019/build/front_CV/CMakeFiles/edit_cache.dir
+/home/hongxu/VTAGBOT2019/build/front_CV/CMakeFiles/list_install_components.dir
+/home/hongxu/VTAGBOT2019/build/front_CV/CMakeFiles/test.dir
+/home/hongxu/VTAGBOT2019/build/front_CV/CMakeFiles/install/local.dir
+/home/hongxu/VTAGBOT2019/build/front_CV/CMakeFiles/rebuild_cache.dir
+/home/hongxu/VTAGBOT2019/build/front_CV/CMakeFiles/install.dir
 /home/hongxu/VTAGBOT2019/build/navigation/CMakeFiles/install/strip.dir
 /home/hongxu/VTAGBOT2019/build/navigation/CMakeFiles/install/local.dir
 /home/hongxu/VTAGBOT2019/build/navigation/CMakeFiles/test.dir

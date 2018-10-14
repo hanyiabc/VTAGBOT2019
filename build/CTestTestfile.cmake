@@ -7,6 +7,7 @@
 subdirs("gtest")
 subdirs("atvsim_description")
 subdirs("Joy_Translate")
+subdirs("front_CV")
 subdirs("navigation")
 subdirs("atvsim_gazebo")
 subdirs("post_gazebo")
