@@ -1,8 +1,8 @@
-# Install script for directory: /home/hongxu/VTAGBOT2019/src/navigation
+# Install script for directory: /home/hanyi/Documents/VTAGBOT2019/src/navigation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/hongxu/VTAGBOT2019/install")
+  set(CMAKE_INSTALL_PREFIX "/home/hanyi/Documents/VTAGBOT2019/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hongxu/VTAGBOT2019/build/navigation/catkin_generated/installspace/navigation.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hanyi/Documents/VTAGBOT2019/build/navigation/catkin_generated/installspace/navigation.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/navigation/cmake" TYPE FILE FILES
-    "/home/hongxu/VTAGBOT2019/build/navigation/catkin_generated/installspace/navigationConfig.cmake"
-    "/home/hongxu/VTAGBOT2019/build/navigation/catkin_generated/installspace/navigationConfig-version.cmake"
+    "/home/hanyi/Documents/VTAGBOT2019/build/navigation/catkin_generated/installspace/navigationConfig.cmake"
+    "/home/hanyi/Documents/VTAGBOT2019/build/navigation/catkin_generated/installspace/navigationConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/navigation" TYPE FILE FILES "/home/hongxu/VTAGBOT2019/src/navigation/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/navigation" TYPE FILE FILES "/home/hanyi/Documents/VTAGBOT2019/src/navigation/package.xml")
 endif()
 

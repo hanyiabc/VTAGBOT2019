@@ -1,8 +1,8 @@
-# Install script for directory: /home/hongxu/VTAGBOT2019/src/atvsim_control
+# Install script for directory: /home/hanyi/Documents/VTAGBOT2019/src/atvsim_control
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/hongxu/VTAGBOT2019/install")
+  set(CMAKE_INSTALL_PREFIX "/home/hanyi/Documents/VTAGBOT2019/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hongxu/VTAGBOT2019/build/atvsim_control/catkin_generated/installspace/atvsim_control.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hanyi/Documents/VTAGBOT2019/build/atvsim_control/catkin_generated/installspace/atvsim_control.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/atvsim_control/cmake" TYPE FILE FILES
-    "/home/hongxu/VTAGBOT2019/build/atvsim_control/catkin_generated/installspace/atvsim_controlConfig.cmake"
-    "/home/hongxu/VTAGBOT2019/build/atvsim_control/catkin_generated/installspace/atvsim_controlConfig-version.cmake"
+    "/home/hanyi/Documents/VTAGBOT2019/build/atvsim_control/catkin_generated/installspace/atvsim_controlConfig.cmake"
+    "/home/hanyi/Documents/VTAGBOT2019/build/atvsim_control/catkin_generated/installspace/atvsim_controlConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/atvsim_control" TYPE FILE FILES "/home/hongxu/VTAGBOT2019/src/atvsim_control/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/atvsim_control" TYPE FILE FILES "/home/hanyi/Documents/VTAGBOT2019/src/atvsim_control/package.xml")
 endif()
 

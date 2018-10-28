@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hongxu/VTAGBOT2019/src/Joy_Translate/src/joyTranslate.cpp" "/home/hongxu/VTAGBOT2019/build/Joy_Translate/CMakeFiles/joy_translate.dir/src/joyTranslate.cpp.o"
+  "/home/hanyi/Documents/VTAGBOT2019/src/Joy_Translate/src/joyTranslate.cpp" "/home/hanyi/Documents/VTAGBOT2019/build/Joy_Translate/CMakeFiles/joy_translate.dir/src/joyTranslate.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

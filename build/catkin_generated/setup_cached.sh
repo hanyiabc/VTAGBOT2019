@@ -7,4 +7,10 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/hongxu/VTAGBOT2019/build"
+export CMAKE_PREFIX_PATH="/home/hanyi/Documents/VTAGBOT2019/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/hanyi/Documents/VTAGBOT2019/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/hanyi/Documents/VTAGBOT2019/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PWD="/home/hanyi/Documents/VTAGBOT2019/build"
+export PYTHONPATH="/home/hanyi/Documents/VTAGBOT2019/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/hanyi/Documents/VTAGBOT2019/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/home/hongxu/VTAGBOT2019/src:/home/hanyi/Documents/VTAGBOT2019/src:$ROS_PACKAGE_PATH"

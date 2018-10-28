@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hongxu/VTAGBOT2019/src
+CMAKE_SOURCE_DIR = /home/hanyi/Documents/VTAGBOT2019/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hongxu/VTAGBOT2019/build
+CMAKE_BINARY_DIR = /home/hanyi/Documents/VTAGBOT2019/build
 
 # Utility rule file for tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/hongxu/VTAGBOT2019/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hongxu/VTAGBOT2019/src /home/hongxu/VTAGBOT2019/src /home/hongxu/VTAGBOT2019/build /home/hongxu/VTAGBOT2019/build /home/hongxu/VTAGBOT2019/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/hanyi/Documents/VTAGBOT2019/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hanyi/Documents/VTAGBOT2019/src /home/hanyi/Documents/VTAGBOT2019/src /home/hanyi/Documents/VTAGBOT2019/build /home/hanyi/Documents/VTAGBOT2019/build /home/hanyi/Documents/VTAGBOT2019/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

@@ -50,7 +50,7 @@ int execute(int argc, char **agrv,PPController cntrl)
 	ros::NodeHandle nh;
 
 	string file_name;
-	nh.param<string>("/waypoint_file_name", file_name, "/home/hongxu/VTAGBOT2019/waypoints1.txt");
+	nh.param<string>("/waypoint_file_name", file_name, "/home/hanyi/Documents/VTAGBOT2019/waypoints1.txt");
 
 	if (!cntrl.initialize(file_name))
 	{

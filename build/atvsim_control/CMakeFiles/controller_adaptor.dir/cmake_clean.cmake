@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/controller_adaptor.dir/src/gazebo_controller_adaptor.cpp.o"
-  "/home/hongxu/VTAGBOT2019/devel/lib/atvsim_control/controller_adaptor.pdb"
-  "/home/hongxu/VTAGBOT2019/devel/lib/atvsim_control/controller_adaptor"
+  "/home/hanyi/Documents/VTAGBOT2019/devel/lib/atvsim_control/controller_adaptor.pdb"
+  "/home/hanyi/Documents/VTAGBOT2019/devel/lib/atvsim_control/controller_adaptor"
 )
 
 # Per-language clean rules from dependency scanning.

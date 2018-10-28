@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/joy_translate.dir/src/joyTranslate.cpp.o"
-  "/home/hongxu/VTAGBOT2019/devel/lib/Joy_Translate/joy_translate.pdb"
-  "/home/hongxu/VTAGBOT2019/devel/lib/Joy_Translate/joy_translate"
+  "/home/hanyi/Documents/VTAGBOT2019/devel/lib/Joy_Translate/joy_translate.pdb"
+  "/home/hanyi/Documents/VTAGBOT2019/devel/lib/Joy_Translate/joy_translate"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,8 @@
-# Install script for directory: /home/hongxu/VTAGBOT2019/src/front_CV
+# Install script for directory: /home/hanyi/Documents/VTAGBOT2019/src/front_CV
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/hongxu/VTAGBOT2019/install")
+  set(CMAKE_INSTALL_PREFIX "/home/hanyi/Documents/VTAGBOT2019/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,21 +38,21 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hongxu/VTAGBOT2019/build/front_CV/catkin_generated/installspace/front_CV.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hanyi/Documents/VTAGBOT2019/build/front_CV/catkin_generated/installspace/front_CV.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/front_CV/cmake" TYPE FILE FILES
-    "/home/hongxu/VTAGBOT2019/build/front_CV/catkin_generated/installspace/front_CVConfig.cmake"
-    "/home/hongxu/VTAGBOT2019/build/front_CV/catkin_generated/installspace/front_CVConfig-version.cmake"
+    "/home/hanyi/Documents/VTAGBOT2019/build/front_CV/catkin_generated/installspace/front_CVConfig.cmake"
+    "/home/hanyi/Documents/VTAGBOT2019/build/front_CV/catkin_generated/installspace/front_CVConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/front_CV" TYPE FILE FILES "/home/hongxu/VTAGBOT2019/src/front_CV/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/front_CV" TYPE FILE FILES "/home/hanyi/Documents/VTAGBOT2019/src/front_CV/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/front_CV" TYPE PROGRAM FILES "/home/hongxu/VTAGBOT2019/src/front_CV/src/real_time_object_detection")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/front_CV" TYPE PROGRAM FILES "/home/hanyi/Documents/VTAGBOT2019/src/front_CV/src/real_time_object_detection")
 endif()
 
