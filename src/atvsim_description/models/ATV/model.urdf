@@ -20,7 +20,7 @@
     <child link="front_left_wheel"/>
     <origin rpy="-3.09079  0       0" xyz="0      -0.00818 -0.21562"/>
     <axis xyz="0   0.00083   1"/>
-    <dynamics damping="10" friction="5"/>
+    <dynamics damping="2" friction="1"/>
     <limit effort="0" velocity="0"/>
   </joint>
   <joint name="front_right_steering_joint" type="revolute">
@@ -37,14 +37,14 @@
     <origin rpy="-0.05079  0       0" xyz="0      -0.00818  0.21562"/>
     <axis xyz="0   0.000083  -1"/>
     <limit effort="0" velocity="0"/>
-    <dynamics damping="10" friction="5"/>
+    <dynamics damping="2" friction="1"/>
   </joint>
   <joint name="rear_left_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="rear_left_wheel"/>
     <origin rpy="-1.52  0    0" xyz="-0.99377  0.71562  0.34697"/>
     <axis xyz="0   0.00083   1"/>
-    <dynamics damping="10" friction="5"/>
+    <dynamics damping="10" friction="10"/>
     <limit effort="10000" velocity="1000"/>
   </joint>
   <joint name="rear_right_wheel_joint" type="continuous">
@@ -52,7 +52,7 @@
     <child link="rear_right_wheel"/>
     <origin rpy="1.52  0    0" xyz="-0.99377 -0.71562  0.34697"/>
     <axis xyz="0   0.00083  -1"/>
-    <dynamics damping="10" friction="5"/>
+    <dynamics damping="10" friction="10"/>
     <limit effort="10000" velocity="1000"/>
   </joint>
   <!-- <joint name="front_left_rod_joint" type="revolute">
@@ -172,7 +172,7 @@
   </joint> -->
   <link name="base_link">
     <inertial>
-      <mass value="720.0"/>
+      <mass value="1200.0"/>
       <origin rpy="0  0  0" xyz="0.1  0   0.4"/>
       <inertia ixx="140" ixy="0.0" ixz="0.0" iyy="550" iyz="0.0" izz="550"/>
     </inertial>
@@ -774,8 +774,8 @@
       <surface>
         <friction>
           <ode>
-            <mu>1.0</mu>
-            <mu2>1.0</mu2>
+            <mu>2.0</mu>
+            <mu2>2.0</mu2>
             <fdir1>0 0 1</fdir1>
             <slip1>0.0</slip1>
             <slip2>0.0</slip2>
@@ -797,8 +797,8 @@
       <surface>
         <friction>
           <ode>
-            <mu>1.0</mu>
-            <mu2>1.0</mu2>
+            <mu>2.0</mu>
+            <mu2>2.0</mu2>
             <fdir1>0 0 1</fdir1>
             <slip1>0.0</slip1>
             <slip2>0.0</slip2>
@@ -820,8 +820,8 @@
       <surface>
         <friction>
           <ode>
-            <mu>1.0</mu>
-            <mu2>1.0</mu2>
+            <mu>2.0</mu>
+            <mu2>2.0</mu2>
             <fdir1>0 0 1</fdir1>
             <slip1>0.0</slip1>
             <slip2>0.0</slip2>
@@ -843,8 +843,8 @@
       <surface>
         <friction>
           <ode>
-            <mu>1.0</mu>
-            <mu2>1.0</mu2>
+            <mu>2.0</mu>
+            <mu2>2.0</mu2>
             <fdir1>0 0 1</fdir1>
             <slip1>0.0</slip1>
             <slip2>0.0</slip2>
