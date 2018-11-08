@@ -1,8 +1,0 @@
-prefix=/home/hanyi/Documents/VTAGBOT2019/devel
-
-Name: waypoint_recorder
-Description: Description of waypoint_recorder
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/hanyi/Documents/VTAGBOT2019/devel/lib 
-Requires: 

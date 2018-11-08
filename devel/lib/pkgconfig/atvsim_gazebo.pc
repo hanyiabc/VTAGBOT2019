@@ -1,8 +1,0 @@
-prefix=/home/hanyi/Documents/VTAGBOT2019/devel
-
-Name: atvsim_gazebo
-Description: Description of atvsim_gazebo
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/hanyi/Documents/VTAGBOT2019/devel/lib 
-Requires: 

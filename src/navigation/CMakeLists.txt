@@ -199,6 +199,6 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-add_executable(agbot_nav_node src/agbot_nav.cpp src/PPController.h src/PPController.cpp)
+add_executable(agbot_nav_node src/agbot_nav.cpp src/PPController.h src/PPController.cpp src/D_Star_Lite_Nav.cpp)
 target_link_libraries(agbot_nav_node ${catkin_LIBRARIES})
 target_link_libraries (agbot_nav_node Eigen3::Eigen)

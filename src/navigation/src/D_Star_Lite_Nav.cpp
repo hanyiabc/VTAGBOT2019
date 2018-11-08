@@ -14,6 +14,11 @@ using namespace std;
 int const gridSize = 203;
 int const edgeNum = 8 * (gridSize) * (gridSize)-20 - 12 * (gridSize - 2);
 
+vector< geometry_msgs::Point32> obsList;
+
+//sensor_msgs::PointCloud obsList;
+int size;
+
 
 /*Custom Edge Struct
 
@@ -45,6 +50,14 @@ int indexConv(int row, int col)
     return row * gridSize + col;
 }
 
+int indexConv(geometry_msgs::Point32 point, float scale, float offsetx, float offsety)
+{
+    int col=(point.x-offsetx)/scale;
+    int row=(point.y-offsety)/scale;
+    
+    return row * gridSize + col;
+}
+
 /* Returns a point containing the x and y positions corresponding to a node's position on a grid
 Inputs:
     node: the index of a node
@@ -62,6 +75,19 @@ geometry_msgs::Point32 nodeConv(int node){
 
     posXY.x=col;
     posXY.y=row;
+
+    return posXY;
+}
+
+geometry_msgs::Point32 nodeConv(int node, float scale, float offsetx, float offsety){
+
+    int col=node%gridSize;
+    int row=((node-col)/gridSize);
+
+    geometry_msgs::Point32 posXY;
+
+    posXY.x=(col*scale)+offsetx;
+    posXY.y=(row*scale)+offsety;
 
     return posXY;
 }
@@ -272,6 +298,51 @@ for (int i = -1; i < 2; i = i + 1){
 
 }
 
+
+class discGrid{
+
+
+public:
+float scale;
+float offsetx;
+float offsety;
+
+void gridInit(geometry_msgs::Point32,geometry_msgs::Point32);
+
+
+};
+
+void discGrid::gridInit(geometry_msgs::Point32 bound1,geometry_msgs::Point32 bound2){
+
+    float x1=bound1.x;
+    float x2=bound2.x;
+
+    float y1=bound1.y;
+    float y2=bound2.y;
+
+    if(x1>x2){
+        offsetx=x2;
+    }
+    else{
+        offsetx=x1;
+    }
+
+    if(y1>y2){
+        offsety=y2;
+    }
+    else{
+        offsety=y1;
+    }
+
+    if(x2-x1>y2-y1){
+        scale=(x2-x1)/gridSize;
+    }
+    else{
+        scale=(y2-y1)/gridSize;
+    }
+
+}
+
 void gridPrint(bool blockedNodes[gridSize*gridSize]){
 
     //print grid (will be removed in full implimentation)
@@ -306,17 +377,44 @@ void gridPrint(bool blockedNodes[gridSize*gridSize]){
 
 }
 
+void scan_callback(const sensor_msgs::PointCloud:: ConstPtr& msg)
+{
+
+	obsList = vector<geometry_msgs::Point32>(msg->points.data());
+    size=points.size();
+
+}
+
 int main(int argc, char **agrv)
 {
+
+geometry_msgs::Point32 bound1;
+
+bound1.x=100;
+bound1.y=200;
+
+geometry_msgs::Point32 bound2;
+
+bound2.x=200;
+bound2.y=300;
+
+    discGrid grid;
+
+    grid.gridInit(bound1,bound2);
+
+ros::NodeHandle nh;
+
+auto fix = nh.subscribe("/scan", 500, scan_callback);
+
     bool blockedNodes[gridSize*gridSize];//nodes that can't be accessed (later from LiDAR data)
 
-    for(int i=0; i<gridSize*gridSize; i++){
-    blockedNodes[i]=0;
+    for(int i=0; i<size; i++){
+    blockedNodes[indexConv(obsList[i],grid.scale,grid.offsetx,grid.offsety)]=1;
     }
 
 
 //pick nodes to dissalow evolution of
-blockedNodes[78]=1;
+/*blockedNodes[78]=1;
 blockedNodes[11]=1;
 blockedNodes[21]=1;
 blockedNodes[31]=1;
@@ -324,7 +422,7 @@ blockedNodes[32]=1;
 blockedNodes[42]=1;
 blockedNodes[53]=1;
 blockedNodes[1]=1;
-
+*/
 edgeCosts edge_List;
 
 edge_List.edgeListInit(blockedNodes);

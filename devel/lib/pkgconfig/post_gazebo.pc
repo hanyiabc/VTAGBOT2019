@@ -1,8 +1,0 @@
-prefix=/home/hanyi/Documents/VTAGBOT2019/devel
-
-Name: post_gazebo
-Description: Description of post_gazebo
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/hanyi/Documents/VTAGBOT2019/devel/lib 
-Requires: 

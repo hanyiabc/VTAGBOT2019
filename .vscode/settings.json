@@ -2,6 +2,7 @@
     "files.associations": {
         "string": "cpp",
         "sstream": "cpp",
-        "cstdio": "cpp"
+        "cstdio": "cpp",
+        "vector": "cpp"
     }
 }
