@@ -40,7 +40,7 @@ void Recorder::utm_Callback(const nav_msgs::Odometry:: ConstPtr& msg)
     if(!targetFile.is_open())
     {
       string file_name;
-      n.param<string>("/waypoint_recorder/waypoint_file_name", file_name, "/home/hongxu/atv_ws/waypoints_no_name.txt");
+      n.param<string>("/waypoint_recorder/waypoint_file_name", file_name, "/home/hanyi/Documents/atv_ws/waypoints_no_name.txt");
       targetFile.open(file_name);
     }
     if (distance > 0.5)

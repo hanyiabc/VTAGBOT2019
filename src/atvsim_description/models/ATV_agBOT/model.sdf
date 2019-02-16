@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="ATV">
+  <model name="ATV_agBOT">
     <static>false</static>
     <link name="chassis">
       <inertial>
@@ -428,7 +428,7 @@
         </material>
       </visual>
     </link>
-    <link name='ATV/imu_link'>
+    <link name='ATV_agBOT/imu_link'>
       <gravity>true</gravity>
       <sensor name="imu_sensor" type="imu">
         <always_on>true</always_on>
@@ -442,7 +442,7 @@
           <gaussianNoise>0.0</gaussianNoise>
           <xyzOffset>0 0 0</xyzOffset>
           <rpyOffset>0 0 0</rpyOffset>
-          <frameName>ATV/imu_link</frameName>
+          <frameName>ATV_agBOT/imu_link</frameName>
         </plugin>
         <pose>0 0 0 0 0 0</pose>
       </sensor>
@@ -460,8 +460,8 @@
         </inertia>
       </inertial>
     </link>
-    <joint name='ATV/imu_joint' type='revolute'>
-      <child>ATV/imu_link</child>
+    <joint name='ATV_agBOT/imu_joint' type='revolute'>
+      <child>ATV_agBOT/imu_link</child>
       <parent>chassis</parent>
       <axis>
         <xyz>1 0 0</xyz>

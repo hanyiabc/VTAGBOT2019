@@ -4,7 +4,7 @@
   </node>
   <node pkg="waypoint_recorder" type="waypoint_recorder_node" name="waypoint_recorder" >
     <rosparam>
-      waypoint_file_name: "/home/hongxu/atv_ws/waypoints1.txt"
+      waypoint_file_name: "/home/hanyi/Documents/VTAGBOT2019/waypoints1.txt"
       start_recording: 0
     </rosparam>
   </node>

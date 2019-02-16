@@ -42,7 +42,7 @@
       <real_time>654 651581516</real_time>
       <wall_time>1539461569 324768542</wall_time>
       <iterations>650543</iterations>
-      <model name='ATV'>
+      <model name='ATV_agBOT'>
         <pose frame=''>0.914658 -0.510994 -0.022889 -8e-06 0.0001 0.047613</pose>
         <scale>1 1 1</scale>
         <link name='base_link'>
@@ -4175,7 +4175,7 @@
       </link>
       <pose frame=''>0 0 0 0 -0 0</pose>
     </model>
-    <model name='ATV'>
+    <model name='ATV_agBOT'>
       <link name='base_link'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <inertial>
@@ -4768,7 +4768,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/hongxu/VTAGBOT2019/src/atvsim_description/models/ATV/meshes/Body.dae</uri>
+              <uri>/home/hanyi/Documents/VTAGBOT2019/src/atvsim_description/models/ATV_agBOT/meshes/Body.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -4777,7 +4777,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/hongxu/VTAGBOT2019/src/atvsim_description/models/ATV/meshes/Bed.dae</uri>
+              <uri>/home/hanyi/Documents/VTAGBOT2019/src/atvsim_description/models/ATV_agBOT/meshes/Bed.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -4786,7 +4786,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/hongxu/VTAGBOT2019/src/atvsim_description/models/ATV/meshes/Tail_Gate.dae</uri>
+              <uri>/home/hanyi/Documents/VTAGBOT2019/src/atvsim_description/models/ATV_agBOT/meshes/Tail_Gate.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -4795,7 +4795,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/hongxu/VTAGBOT2019/src/atvsim_description/models/ATV/meshes/Brake_Front_Left.dae</uri>
+              <uri>/home/hanyi/Documents/VTAGBOT2019/src/atvsim_description/models/ATV_agBOT/meshes/Brake_Front_Left.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -4804,7 +4804,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/hongxu/VTAGBOT2019/src/atvsim_description/models/ATV/meshes/Brake_Front_Right.dae</uri>
+              <uri>/home/hanyi/Documents/VTAGBOT2019/src/atvsim_description/models/ATV_agBOT/meshes/Brake_Front_Right.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -4861,7 +4861,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/hongxu/VTAGBOT2019/src/atvsim_description/models/ATV/meshes/hokuyo.dae</uri>
+              <uri>/home/hanyi/Documents/VTAGBOT2019/src/atvsim_description/models/ATV_agBOT/meshes/hokuyo.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -5205,7 +5205,7 @@
           <geometry>
             <mesh>
               <scale>1.0037 0.8862 0.8862</scale>
-              <uri>/home/hongxu/VTAGBOT2019/src/atvsim_description/models/ATV/meshes/Wheel_Front_Left.dae</uri>
+              <uri>/home/hanyi/Documents/VTAGBOT2019/src/atvsim_description/models/ATV_agBOT/meshes/Wheel_Front_Left.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -5430,7 +5430,7 @@
           <geometry>
             <mesh>
               <scale>1.0037 0.8862 0.8862</scale>
-              <uri>/home/hongxu/VTAGBOT2019/src/atvsim_description/models/ATV/meshes/Wheel_Front_Left.dae</uri>
+              <uri>/home/hanyi/Documents/VTAGBOT2019/src/atvsim_description/models/ATV_agBOT/meshes/Wheel_Front_Left.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -5499,7 +5499,7 @@
           <geometry>
             <mesh>
               <scale>1.0037 0.8862 0.8862</scale>
-              <uri>/home/hongxu/VTAGBOT2019/src/atvsim_description/models/ATV/meshes/Wheels_Rear_Left.dae</uri>
+              <uri>/home/hanyi/Documents/VTAGBOT2019/src/atvsim_description/models/ATV_agBOT/meshes/Wheels_Rear_Left.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -5568,7 +5568,7 @@
           <geometry>
             <mesh>
               <scale>1.0037 0.8862 0.8862</scale>
-              <uri>/home/hongxu/VTAGBOT2019/src/atvsim_description/models/ATV/meshes/Wheels_Rear_Right.dae</uri>
+              <uri>/home/hanyi/Documents/VTAGBOT2019/src/atvsim_description/models/ATV_agBOT/meshes/Wheels_Rear_Right.dae</uri>
             </mesh>
           </geometry>
         </visual>

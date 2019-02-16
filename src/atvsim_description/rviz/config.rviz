@@ -59,7 +59,7 @@ Visualization Manager:
       Collision Enabled: false
       Enabled: true
       Links:
-        ATV/imu_link:
+        ATV_agBOT/imu_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -133,7 +133,7 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
-        ATV/imu_link:
+        ATV_agBOT/imu_link:
           Value: true
         All Enabled: true
         base_link:
@@ -168,7 +168,7 @@ Visualization Manager:
       Tree:
         odom:
           base_link:
-            ATV/imu_link:
+            ATV_agBOT/imu_link:
               {}
             camera_link:
               {}

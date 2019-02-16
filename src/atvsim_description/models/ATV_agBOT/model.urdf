@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
-<robot name="ATV">
-  <joint name="ATV/imu_joint" type="fixed">
+<robot name="ATV_agBOT">
+  <joint name="ATV_agBOT/imu_joint" type="fixed">
     <parent link="base_link"/>
-    <child link="ATV/imu_link"/>
+    <child link="ATV_agBOT/imu_link"/>
     <origin rpy="0  0  0" xyz="0  0  0"/>
     <axis xyz="1  0  0"/>
     <limit effort="0.0" lower="0.0" upper="0.0" velocity="0.0"/>
@@ -335,31 +335,31 @@
     <visual name="visual">
       <origin rpy="0       0      -1.57079" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Body.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Body.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <visual name="cargo_visual">
       <origin rpy="0      0     -1.5707" xyz="-1.2      0      0.87"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Bed.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Bed.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <visual name="tailgate_visual">
       <origin rpy="0      0     -1.5707" xyz="-1.492  0     0.9"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Tail_Gate.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Tail_Gate.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <visual name="front_left_brake_visual">
       <origin rpy="3.1415  0      1.5707" xyz="1.12    -0.57487  0.35516"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Brake_Front_Left.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Brake_Front_Left.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <visual name="front_right_brake_visual">
       <origin rpy="3.1415  0      1.5707" xyz="2.58     0.05  0.8"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Brake_Front_Right.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Brake_Front_Right.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <visual name="central_hump1">
@@ -399,7 +399,7 @@
       </geometry>
     </visual>
   </link>
-  <link name="ATV/imu_link">
+  <link name="ATV_agBOT/imu_link">
     <inertial>
       <mass value="0.015"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
@@ -421,7 +421,7 @@
     <visual name="tire_visual">
       <origin rpy="0  1.57079  0" xyz="0  0  -0.13"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Wheel_Front_Left.dae" scale="1.003700111 0.886200464 0.886200464"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Wheel_Front_Left.dae" scale="1.003700111 0.886200464 0.886200464"/>
       </geometry>
     </visual>
   </link>
@@ -440,7 +440,7 @@
     <visual name="visual">
       <origin rpy="0  1.57079  0" xyz="0  0  -0.13"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Wheel_Front_Left.dae" scale="1.003700111 0.886200464 0.886200464"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Wheel_Front_Left.dae" scale="1.003700111 0.886200464 0.886200464"/>
       </geometry>
     </visual>
   </link>
@@ -459,7 +459,7 @@
     <visual name="visual">
       <origin rpy="0      1.57079  0" xyz="0  0  -0.13"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Wheels_Rear_Left.dae" scale="1.003700111 0.886200464 0.886200464"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Wheels_Rear_Left.dae" scale="1.003700111 0.886200464 0.886200464"/>
       </geometry>
     </visual>
   </link>
@@ -478,7 +478,7 @@
     <visual name="visual">
       <origin rpy="0      -1.57079  0" xyz="0  0  -0.13"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Wheels_Rear_Right.dae" scale="1.003700111 0.886200464 0.886200464"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Wheels_Rear_Right.dae" scale="1.003700111 0.886200464 0.886200464"/>
       </geometry>
     </visual>
   </link>
@@ -497,7 +497,7 @@
     <visual name="visual">
       <origin rpy="0      0     -1.5707" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Gas_Pedal.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Gas_Pedal.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -516,7 +516,7 @@
     <visual name="visual">
       <origin rpy="0      0     -1.5707" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Brake_Pedal.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Brake_Pedal.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link> -->
@@ -624,7 +624,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/hokuyo.dae"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/hokuyo.dae"/>
       </geometry>
     </visual>
 
@@ -667,13 +667,13 @@
     <collision name="collision">
       <origin rpy="-0.6108   0      -1.57079" xyz="-0.03     0      -0.12082"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Steering_Wheel.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Steering_Wheel.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <visual name="visual">
       <origin rpy="-0.6108   0      -1.57079" xyz="-0.03     0      -0.12082"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Steering_Wheel.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Steering_Wheel.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -686,13 +686,13 @@
     <collision name="hand_brake_collision">
       <origin rpy="-0.2      0      -1.57079" xyz="0    0    0.05"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Shifter.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Shifter.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <visual name="hand_brake_visual">
       <origin rpy="-0.2      0      -1.57079" xyz="0    0    0.05"/>
       <geometry>
-        <mesh filename="package://atvsim_description/models/ATV/meshes/Shifter.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://atvsim_description/models/ATV_agBOT/meshes/Shifter.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -946,7 +946,7 @@
     </plugin>
     <plugin filename="libhector_gazebo_ros_imu.so" name="imu_plugin">
       <updateRate>100</updateRate>
-      <bodyName>ATV/imu_link</bodyName>
+      <bodyName>ATV_agBOT/imu_link</bodyName>
       <topicName>/imu</topicName>
       <serviceName>/imu/calibrate</serviceName>
       <accelOffset>0.0 0.0 0.0</accelOffset>

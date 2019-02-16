@@ -1,0 +1,2 @@
+ sudo apt install ros-melodic-joy ros-melodic-ros-control ros-melodic-gazebo-ros-control ros-melodic-hector-gazebo ros-melodic-gps-common
+ sudo apt install ros-melodic-robot-state-publisher
