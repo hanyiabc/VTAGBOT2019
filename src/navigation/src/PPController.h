@@ -6,17 +6,18 @@
 #include <iostream>
 #include <string>
 #include <Eigen/Dense>
+#include "ros/ros.h"
 
-using std::cout;
-using std::vector;
-using std::ifstream;
-using std::string;
-using std::stod;
+using Eigen::Matrix2Xd;
+using Eigen::Matrix3Xd;
 using Eigen::MatrixXd;
 using Eigen::Vector2d;
 using Eigen::VectorXd;
-using Eigen::Matrix3Xd;
-using Eigen::Matrix2Xd;
+using std::cout;
+using std::ifstream;
+using std::stod;
+using std::string;
+using std::vector;
 //struct to define vehicle position on a coordinate system at a certain heading
 struct Point
 {
@@ -24,28 +25,28 @@ struct Point
     double y;
     double inputHeading;
     Point() : x(0), y(0), inputHeading(0) {}
-    Point(double xIn, double yIn, double headingIn): x(xIn), y(yIn), inputHeading(headingIn) { }
-    Point(double xIn, double yIn): x(xIn), y(yIn) { }
-	Vector2d toVector2D()
-	{
-		return Vector2d(x, y);
-	}
+    Point(double xIn, double yIn, double headingIn) : x(xIn), y(yIn), inputHeading(headingIn) {}
+    Point(double xIn, double yIn) : x(xIn), y(yIn) {}
+    Vector2d toVector2D()
+    {
+        return Vector2d(x, y);
+    }
 };
 
 //class to define vehicle parameters
 struct AckermannVehicle
 {
     double length;
-	double maximumVelocity;
-	double minTurningRadius;
+    double maximumVelocity;
+    double minTurningRadius;
     AckermannVehicle(double lengthIn, double maximumVelocityIn, double minTurningRadiusIn) : length(lengthIn), maximumVelocity(maximumVelocityIn), minTurningRadius(minTurningRadiusIn) {}
 };
 
 //class to define Pure pursuit controller parameters
 class PPController
 {
-private:
-    double leadDistance, length, turningRadius, maximumVelocity;//set the length for ppcontroller as the length of maximumSteeringAngle
+  private:
+    double leadDistance, length, turningRadius, maximumVelocity; //set the length for ppcontroller as the length of maximumSteeringAngle
 
     //List of waypoints: From start to end:
 
@@ -55,8 +56,8 @@ private:
 
     //List of desired heading values:
     vector<double> tgtHeading;
-	//Matrix3Xd tgtHeading;
-	//List of normal vectors to segments joining the waypoints:
+    //Matrix3Xd tgtHeading;
+    //List of normal vectors to segments joining the waypoints:
     Matrix2Xd segNormVecList;
     //Number of waypoints:
     size_t nPts;
@@ -68,7 +69,8 @@ private:
     double k_vel;
 
     double minVelocity;
-public:
+
+  public:
     PPController(double inputLeadDistance, double inputLength = 2.065, double inputMinTurningRadius = 4.6, double inputMaximumVelocity = 0.5);
     bool initialize(string filename);
 
@@ -77,7 +79,7 @@ public:
     void compute_steering_vel_cmds(Point current, double &vel, double &delta, double &distance2Goal);
 
     //compute the steering radius of ackerman vehicle of given parameters
-    void compute_turning_radius(Point current = Point(0,0,0) , Point goal = Point(0,0,0));
+    void compute_turning_radius(Point current = Point(0, 0, 0), Point goal = Point(0, 0, 0));
 
     //compute the steering angle of ackermann vehicle of given paramters
     double compute_steering_angle();
@@ -95,7 +97,5 @@ public:
     void resetWpIdx();
     ~PPController();
 };
-
-
 
 #endif

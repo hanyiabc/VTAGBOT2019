@@ -43,7 +43,7 @@ int execute(int argc, char **agrv, PPController cntrl)
 	ros::NodeHandle nh;
 
 	string file_name;
-	nh.param<string>("/waypoint_file_name", file_name, "waypoints1.txt");
+	nh.param<string>("/waypoint_file_name", file_name, "../VTAGBOT2019/waypoints1.txt");
 
 	if (!cntrl.initialize(file_name))
 	{
@@ -146,7 +146,7 @@ int execute(int argc, char **agrv, PPController cntrl)
 		{
 			cntrl.resetWpIdx();
 			nh.setParam("/reset_navigation", 0);
-			nh.param<string>("/waypoint_file_name", file_name, "/home/hanyi/VTAGBOT2019/waypoints1.txt");
+			nh.param<string>("/waypoint_file_name", file_name, "../VTAGBOT2019/waypoints1.txt");
 
 			if (!cntrl.initialize(file_name))
 			{

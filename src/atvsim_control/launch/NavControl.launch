@@ -5,6 +5,10 @@
   <node pkg="navigation" type="agbot_nav_node" name="navigation_node" />
   <rosparam param="start_navigation">0</rosparam>
   <rosparam param="reset_navigation">0</rosparam>
+  
+  <rosparam>
+      waypoint_file_name: "../VTAGBOT2019/waypoints1.txt"
+  </rosparam>
   <node pkg="atvsim_control" type="controller_adaptor" name="adaptor" >
     <remap to="/steering_cmd" from="/steering_pos_cmd"/>
     <remap to="/speed_setpoint" from="pedal_cmd"/>
