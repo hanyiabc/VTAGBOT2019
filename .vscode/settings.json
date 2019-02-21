@@ -5,6 +5,8 @@
         "string": "cpp",
         "map": "cpp",
         "fstream": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "dense": "cpp",
+        "geometry": "cpp"
     }
 }
