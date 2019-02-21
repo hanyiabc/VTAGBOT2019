@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #get simulation working
-
+#need root
+sudo su
 #change to home
 cd ~
 #clone the repo

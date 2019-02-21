@@ -4,6 +4,7 @@
         "vector": "cpp",
         "string": "cpp",
         "map": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "complex": "cpp"
     }
 }

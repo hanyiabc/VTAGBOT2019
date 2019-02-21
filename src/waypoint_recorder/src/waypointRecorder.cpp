@@ -6,38 +6,38 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-using std::cout;
+using Eigen::Matrix2Xd;
+using Eigen::Matrix3Xd;
 using Eigen::MatrixXd;
 using Eigen::Vector2d;
 using Eigen::VectorXd;
-using Eigen::Matrix3Xd;
-using Eigen::Matrix2Xd;
+using std::cout;
 
 class Recorder
 {
 public:
-  Vector2d currentLocation = Vector2d::Zero(2,1);
-  Vector2d lastLocation = Vector2d::Zero(2,1);
-  Vector2d distanceVec = Vector2d::Zero(2,1);
+  Vector2d currentLocation = Vector2d::Zero(2, 1);
+  Vector2d lastLocation = Vector2d::Zero(2, 1);
+  Vector2d distanceVec = Vector2d::Zero(2, 1);
   ofstream targetFile;
   ros::NodeHandle n;
-  void utm_Callback(const nav_msgs::Odometry:: ConstPtr& msg);
+  void utm_Callback(const nav_msgs::Odometry::ConstPtr &msg);
 };
 
-void Recorder::utm_Callback(const nav_msgs::Odometry:: ConstPtr& msg)
+void Recorder::utm_Callback(const nav_msgs::Odometry::ConstPtr &msg)
 {
-  currentLocation(0,0) = msg->pose.pose.position.x;
-  currentLocation(1,0) = msg->pose.pose.position.y;
-	ROS_INFO("UTM_x: %f\tUTM_y: %f", msg->pose.pose.position.x, msg->pose.pose.position.y);
-  distanceVec = currentLocation-lastLocation;
-  float distance= distanceVec.norm();
+  currentLocation(0, 0) = msg->pose.pose.position.x;
+  currentLocation(1, 0) = msg->pose.pose.position.y;
+  ROS_INFO("UTM_x: %f\tUTM_y: %f", msg->pose.pose.position.x, msg->pose.pose.position.y);
+  distanceVec = currentLocation - lastLocation;
+  float distance = distanceVec.norm();
   cout << setprecision(20) << "vector = " << currentLocation << "\n";
   cout << "distance = " << distance << "\n";
   int start = 0;
   n.param<int>("/waypoint_recorder/start_recording", start, 0);
   if (start == 1)
   {
-    if(!targetFile.is_open())
+    if (!targetFile.is_open())
     {
       string file_name;
       n.param<string>("/waypoint_recorder/waypoint_file_name", file_name, "/home/hongxu/atv_ws/waypoints_no_name.txt");
@@ -46,7 +46,7 @@ void Recorder::utm_Callback(const nav_msgs::Odometry:: ConstPtr& msg)
     if (distance > 0.5)
     {
       lastLocation = currentLocation;
-      targetFile << setprecision(20) << currentLocation(0,0) << ", " << currentLocation(1,0) << "\n";
+      targetFile << setprecision(20) << currentLocation(0, 0) << ", " << currentLocation(1, 0) << "\n";
     }
   }
 }
