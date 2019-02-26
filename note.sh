@@ -19,11 +19,12 @@ sed -i "s|hongxu|$USER|g" ./VTAGBOT2019/src/atvsim_gazebo/worlds/drillfieldTest.
 
 #install the necessar deps
 sudo apt install -y ros-melodic-joy ros-melodic-ros-control ros-melodic-gazebo-ros-control ros-melodic-hector-gazebo ros-melodic-gps-common
-sudo apt install -y ros-melodic-robot-state-publisher ros-melodic-meida-export
+sudo apt install -y ros-melodic-robot-state-publisher ros-melodic-media-export qt4-default ros-melodic-tf-conversions
 
 cd VTAGBOT2019
 catkin_make
 source ./devel/setup.bash
 
 echo "source ~/VTAGBOT2019/devel/setup.bash" >> ~/.bashrc
-#rosrun tf static_transform_publisher 0 0 0 0 0 0 1 p hokuyo_link 10
+#rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map hokuyo_link 10
+#rosrun rviz rviz -f hokuyo_link
