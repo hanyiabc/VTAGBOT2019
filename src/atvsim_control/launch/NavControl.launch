@@ -2,6 +2,10 @@
   <node pkg="gps_common" type="utm_odometry_node" name="GPS2UTM" >
     <remap from="/odom" to="/UTM"/>
   </node>
+
+  <node name="base_tf" pkg="tf" type="static_transform_publisher"
+		args="0 0 0 0 0 0 1 map base_link 10" />
+
   <node pkg="navigation" type="agbot_nav_node" name="navigation_node" />
   <rosparam param="start_navigation">0</rosparam>
   <rosparam param="reset_navigation">0</rosparam>

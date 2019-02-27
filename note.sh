@@ -27,4 +27,5 @@ source ./devel/setup.bash
 
 echo "source ~/VTAGBOT2019/devel/setup.bash" >> ~/.bashrc
 #rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map hokuyo_link 10
-#rosrun rviz rviz -f hokuyo_link
+
+#rosrun gazebo_ros spawn_model -file VTAGBOT2019/src/atvsim_description/models/ATV/model.urdf -urdf -model ATV
