@@ -4873,7 +4873,7 @@
         </visual>
         <gravity>1</gravity>
         <velocity_decay/>
-        <sensor name='head_hokuyo_sensor' type='gpu_ray'>
+        <sensor name='head_hokuyo_sensor' type='ray'>
           <visualize>0</visualize>
           <update_rate>40</update_rate>
           <ray>
@@ -4896,7 +4896,7 @@
               <stddev>0.01</stddev>
             </noise>
           </ray>
-          <plugin name='gazebo_ros_head_hokuyo_controller' filename='libgazebo_ros_gpu_laser.so'>
+          <plugin name='gazebo_ros_head_hokuyo_controller' filename='libgazebo_ros_laser.so'>
             <topicName>scan</topicName>
             <frameName>hokuyo_link</frameName>
             <robotNamespace>/</robotNamespace>
