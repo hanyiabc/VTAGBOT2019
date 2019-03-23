@@ -57,7 +57,7 @@ int main(int argc, char **argv)
 
   Recorder recorder;
 
-  ros::Subscriber utm_sub = recorder.n.subscribe("/UTM", 1000, &Recorder::utm_Callback, &recorder);
+  ros::Subscriber utm_sub = recorder.n.subscribe("/odom", 1000, &Recorder::utm_Callback, &recorder);
   ros::spin();
   recorder.targetFile.close();
   return 0;

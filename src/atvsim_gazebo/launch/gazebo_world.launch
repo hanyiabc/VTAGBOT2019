@@ -18,20 +18,18 @@
 		<arg name="use_sim_time" value="$(arg use_sim_time)" />
 		<arg name="headless" value="$(arg headless)" />
 	</include>
-	<!-- <rosparam file="$(find atvsim_description)/models/ATV/config/ackermann_hardware.yaml" command="load"/> -->
-	<!-- <rosparam file="$(find atvsim_description)/models/ATV/config/pids.yaml" command="load"/> -->
 	<param name="robot_description" textfile="$(find atvsim_description)/models/ATV/model.urdf"/>
-	<!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" /> -->
-	<!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /> -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher"
+    type="robot_state_publisher" />
 	<rosparam file="$(find atvsim_control)/config/joints.yaml" command="load" ns="atv_joint_state_controller"/>
-	<!-- <rosparam file="$(find atvsim_control)/config/rear_drive.yaml" command="load" ns="rear_drive_controller"/> -->
 	<rosparam file="$(find atvsim_control)/config/steering_controller.yaml" command="load" ns="steer_controller"/>
+	
 
-	<!-- <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find atvsim_description)/models/ATV/model.urdf -urdf -z 1 -model ATV" /> -->
 	<node name="atv_controller_spawner" pkg="controller_manager" type="spawner"
     args="atv_joint_state_controller
 					steer_controller
           --shutdown-timeout 3"/>
 
-	<!-- <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model ATV" /> -->
+	<!-- <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find atvsim_description)/models/ATV/model.urdf -urdf -model ATV" /> -->
+
 </launch>

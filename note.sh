@@ -19,7 +19,7 @@ sed -i "s|hongxu|$USER|g" ./VTAGBOT2019/src/atvsim_gazebo/worlds/drillfieldTest.
 
 #install the necessar deps
 sudo apt install -y ros-melodic-joy ros-melodic-ros-control ros-melodic-gazebo-ros-control ros-melodic-hector-gazebo ros-melodic-gps-common
-sudo apt install -y ros-melodic-robot-state-publisher ros-melodic-media-export qt4-default ros-melodic-tf-conversions
+sudo apt install -y ros-melodic-robot-state-publisher ros-melodic-media-export qt4-default ros-melodic-tf-conversions ros-melodic-navigation
 
 cd VTAGBOT2019
 catkin_make
@@ -27,4 +27,6 @@ source ./devel/setup.bash
 
 echo "source ~/VTAGBOT2019/devel/setup.bash" >> ~/.bashrc
 #rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map hokuyo_link 10
-#rosrun rviz rviz -f hokuyo_link
+
+#rosrun gazebo_ros spawn_model -file VTAGBOT2019/src/atvsim_description/models/ATV/model.urdf -urdf -model ATV
+# adapter used to change frorm steer to Twist message, use the adaptor. Need reverse conversion (from Twist to steer/pedal) for actual robot. 

@@ -1,0 +1,10 @@
+digraph G {
+"odom" -> "base_link"[label="Broadcaster: /gazebo\nAverage rate: 997.617 Hz\nMost recent transform: 1551631641.197 ( 0.001 sec old)\nBuffer length: 4.996 sec\n"];
+"base_link" -> "ATV/imu_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1551631641.198 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "hokuyo_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1551631641.198 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "front_right_wheel_steering_block"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.202 Hz\nMost recent transform: 1076.086 ( 1551630565.112 sec old)\nBuffer length: 4.960 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1551631641.198"[ shape=plaintext ] ;
+ }->"odom";
+}
