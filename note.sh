@@ -19,7 +19,7 @@ sed -i "s|hongxu|$USER|g" ./VTAGBOT2019/src/atvsim_gazebo/worlds/drillfieldTest.
 
 #install the necessar deps
 sudo apt install -y ros-melodic-joy ros-melodic-ros-control ros-melodic-gazebo-ros-control ros-melodic-hector-gazebo ros-melodic-gps-common
-sudo apt install -y ros-melodic-robot-state-publisher ros-melodic-media-export qt4-default ros-melodic-tf-conversions
+sudo apt install -y ros-melodic-robot-state-publisher ros-melodic-media-export qt4-default ros-melodic-tf-conversions ros-melodic-navigation
 
 cd VTAGBOT2019
 catkin_make
