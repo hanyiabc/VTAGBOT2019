@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <robot name="ATV">
-  <joint name="ATV/imu_joint" type="fixed">
+  <joint name="imu_joint" type="fixed">
     <parent link="base_link"/>
-    <child link="ATV/imu_link"/>
+    <child link="imu_link"/>
     <origin rpy="0  0  0" xyz="0  0  0"/>
     <axis xyz="1  0  0"/>
     <limit effort="0.0" lower="0.0" upper="0.0" velocity="0.0"/>
@@ -399,7 +399,7 @@
       </geometry>
     </visual>
   </link>
-  <link name="ATV/imu_link">
+  <link name="imu_link">
     <inertial>
       <mass value="0.015"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
@@ -946,7 +946,7 @@
     </plugin>
     <plugin filename="libhector_gazebo_ros_imu.so" name="imu_plugin">
       <updateRate>100</updateRate>
-      <bodyName>ATV/imu_link</bodyName>
+      <bodyName>imu_link</bodyName>
       <topicName>/imu</topicName>
       <serviceName>/imu/calibrate</serviceName>
       <accelOffset>0.0 0.0 0.0</accelOffset>

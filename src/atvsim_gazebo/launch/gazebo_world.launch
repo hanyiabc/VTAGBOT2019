@@ -27,6 +27,8 @@
 		<arg name="headless" value="$(arg headless)" />
 	</include>
 	<param name="robot_description" textfile="$(find atvsim_description)/models/ATV/model.urdf"/>
+	<node name="robot_state_publisher" pkg="robot_state_publisher"
+    type="robot_state_publisher" />
 	<rosparam file="$(find atvsim_control)/config/joints.yaml" command="load" ns="atv_joint_state_controller"/>
 	<rosparam file="$(find atvsim_control)/config/steering_controller.yaml" command="load" ns="steer_controller"/>
 	

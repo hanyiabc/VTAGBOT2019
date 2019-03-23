@@ -29,3 +29,4 @@ echo "source ~/VTAGBOT2019/devel/setup.bash" >> ~/.bashrc
 #rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map hokuyo_link 10
 
 #rosrun gazebo_ros spawn_model -file VTAGBOT2019/src/atvsim_description/models/ATV/model.urdf -urdf -model ATV
+# adapter used to change frorm steer to Twist message, use the adaptor. Need reverse conversion (from Twist to steer/pedal) for actual robot. 
