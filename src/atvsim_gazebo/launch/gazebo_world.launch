@@ -19,8 +19,11 @@
 		<arg name="headless" value="$(arg headless)" />
 	</include>
 	<param name="robot_description" textfile="$(find atvsim_description)/models/ATV/model.urdf"/>
+
 	<node name="robot_state_publisher" pkg="robot_state_publisher"
     type="robot_state_publisher" />
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> 
+
 	<rosparam file="$(find atvsim_control)/config/joints.yaml" command="load" ns="atv_joint_state_controller"/>
 	<rosparam file="$(find atvsim_control)/config/steering_controller.yaml" command="load" ns="steer_controller"/>
 	
@@ -30,6 +33,6 @@
 					steer_controller
           --shutdown-timeout 3"/>
 
-	<!-- <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find atvsim_description)/models/ATV/model.urdf -urdf -model ATV" /> -->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model ATV" respawn="false" output="screen" />
 
 </launch>
