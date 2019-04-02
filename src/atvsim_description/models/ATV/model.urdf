@@ -607,7 +607,7 @@
 
   <joint name="hokuyo_joint" type="fixed">
     <axis xyz="0 1 0" />
-    <origin xyz="1.2 0 1.1" rpy="0 0 0"/>
+    <origin xyz="1.2 0 1.8" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="hokuyo_link"/>
   </joint>
@@ -908,8 +908,8 @@
         <horizontal>
           <samples>720</samples>
           <resolution>1</resolution>
-          <min_angle>-1.570796</min_angle>
-          <max_angle>1.570796</max_angle>
+          <min_angle>-1.57</min_angle>
+          <max_angle>1.57</max_angle>
         </horizontal>
       </scan>
       <range>
@@ -940,13 +940,13 @@
       <referenceLatitude>37.228369</referenceLatitude>
       <referenceLongitude>-80.423045</referenceLongitude>
       <referenceHeading>90</referenceHeading>
-      <!-- <drift>0 0 0</drift> -->
-      <drift>1.0 1.0 1.0</drift>
-      <!-- <gaussiannoise>0 0 0</gaussiannoise> -->
-      <gaussiannoise>0.1 0.1 0.1</gaussiannoise>
+      <drift>0 0 0</drift>
+      <!-- <drift>1.0 1.0 1.0</drift> -->
+      <gaussiannoise>0 0 0</gaussiannoise>
+      <!-- <gaussiannoise>0.1 0.1 0.1</gaussiannoise> -->
       <velocitydrift>0 0 0</velocitydrift>
       <velocitygaussiannoise>0 0 0</velocitygaussiannoise>
-      <velocitygaussiannoise>0.1 0.1 0.1</velocitygaussiannoise>
+      <!-- <velocitygaussiannoise>0.1 0.1 0.1</velocitygaussiannoise> -->
     </plugin>
     <plugin filename="libhector_gazebo_ros_imu.so" name="imu_plugin">
       <updateRate>100</updateRate>
