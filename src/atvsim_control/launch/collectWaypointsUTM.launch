@@ -1,6 +1,6 @@
 <launch>
   <node pkg="gps_common" type="utm_odometry_node" name="GPS2UTM" >
-    <remap from="/odom" to="/UTM"/>
+    <!-- <remap from="/odom" to="/UTM"/> -->
   </node>
   <node pkg="waypoint_recorder" type="waypoint_recorder_node" name="waypoint_recorder" >
     <rosparam>
