@@ -1,9 +1,9 @@
+#include "geometry_msgs/Twist.h"
 #include "ros/ros.h"
 #include "std_msgs/Float64.h"
 #include "std_msgs/Float64MultiArray.h"
 #include "std_msgs/MultiArrayDimension.h"
 #include "std_msgs/MultiArrayLayout.h"
-#include "geometry_msgs/Twist.h"
 
 #include <sstream>
 
@@ -15,7 +15,6 @@ public:
   void steering_pos_cmd_Callback(const std_msgs::Float64::ConstPtr& msg);
   // void pedal_effort_cmd_Callback(const std_msgs::Float64::ConstPtr& msg);
   void pedal_cmd_Callback(const std_msgs::Float64::ConstPtr& msg);
-
 };
 
 void Adaptor::steering_pos_cmd_Callback(const std_msgs::Float64::ConstPtr& msg)
@@ -28,7 +27,6 @@ void Adaptor::steering_pos_cmd_Callback(const std_msgs::Float64::ConstPtr& msg)
   {
     steering_cmd.data = msg->data * 0.7727;
   }
-
 }
 // void Adaptor::pedal_effort_cmd_Callback(const std_msgs::Float64::ConstPtr& msg)
 // {
@@ -38,7 +36,7 @@ void Adaptor::pedal_cmd_Callback(const std_msgs::Float64::ConstPtr& msg)
 {
   pedal_cmd = msg->data * 5;
 }
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
   ros::init(argc, argv, "adaptor");
   ros::NodeHandle n;
