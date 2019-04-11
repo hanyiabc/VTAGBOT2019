@@ -2,6 +2,7 @@
 #include <sensor_msgs/Imu.h>
 #include <nav_msgs/Odometry.h>
 #include <tf/transform_broadcaster.h>
+#include <geometry_msgs/Point32.h>
 
 double x = 0;
 double y = 0;
@@ -20,9 +21,12 @@ void fix_callback(const nav_msgs::Odometry::ConstPtr &odom)
     y = odom->pose.pose.position.y;
 }
 
-void imu_callback(const sensor_msgs::Imu::ConstPtr &imu)
+void imu_callback(const geometry_msgs::Point32::ConstPtr &pt)
 {
-    tf::Quaternion q(imu->orientation.x, imu->orientation.y, imu->orientation.z, imu->orientation.w);
+    
+    //tf::Quaternion q(imu->orientation.x, imu->orientation.y, imu->orientation.z, imu->orientation.w);
+    tf::Quaternion q;
+    q.setRPY(0.0, 0.0, pt->z);
     static tf::TransformBroadcaster br;
 
     tf::Transform transform;
@@ -36,7 +40,7 @@ int main(int argc, char **agrv)
     ros::init(argc, agrv, "map_base_tf_publisher");
     ros::NodeHandle nh;
     auto fix_sub = nh.subscribe("/odom", 500, fix_callback);
-    auto imu_sub = nh.subscribe("/imu", 500, imu_callback);
+    auto imu_sub = nh.subscribe("/novatel_imu", 500, imu_callback);
 
     ros::spin();
 }
