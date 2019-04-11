@@ -1,6 +1,6 @@
 <launch>
   <node pkg="gps_common" type="utm_odometry_node" name="GPS2UTM" >
-  <remap from="/odom" to="/UTM"/>
+  <!-- <remap from="/odom" to="/UTM"/> -->
   </node>
 
   <node pkg="navigation" type="agbot_nav_node" name="navigation_node" />
@@ -18,5 +18,15 @@
     <remap to="/novatel_imu" from="/IMU_rpy"/>
   </node>
   <include file="$(find atvsim_gazebo)/launch/gazebo_world.launch" />
+
+  <!-- publish static transform between map and world -->
+	<node pkg="tf" type="static_transform_publisher" name="fixed_map" args="0 0 0 0 0 0 /world /map 100" />
+  <node pkg="navigation" type="map_base_tf_node" name="map_base_transform_publisher" />
+	<!-- map publisher node -->
+	<param name="occupancy_rate" value="15" />
+	<param name="grid_resolution" value="0.5" />
+	<param name="grid_width" value="2000" />
+	<param name="grid_height" value="2000" />
+	<!-- <node pkg="navigation" type="laser_to_occupancy_grid.py" name="map_publisher" output="screen" /> -->
 
 </launch>

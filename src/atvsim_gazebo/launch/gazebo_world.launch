@@ -19,17 +19,20 @@
 		<arg name="headless" value="$(arg headless)" />
 	</include>
 	<param name="robot_description" textfile="$(find atvsim_description)/models/ATV/model.urdf"/>
-	<node name="laser_frame" pkg="tf" type="static_transform_publisher"
-		args="0 0 0 0 0 0 1 base_link hokuyo_link 10" />
+
+	<!-- <node name="laser_frame" pkg="tf" type="static_transform_publisher"
+		args="0 0 0 0 0 0 1 base_link hokuyo_link 10" /> -->
+	<!-- <node name="fix_map_tf" pkg="tf" type="static_transform_publisher"
+		args="0 0 0 0 0 0 1 world map 40" /> -->
 
 	<!-- <node name="imu_frame" pkg="tf" type="static_transform_publisher"
 		args="0 0 0 0 0 0 1 base_link imu_link 10" /> -->
 
 	<!-- <node name="imu_frame" pkg="tf" type="static_transform_publisher"
 		args="0 0 0 0 0 0 1 base_link imu_link 10" > -->
-	<!-- <node name="robot_state_publisher" pkg="robot_state_publisher"
+	<node name="robot_state_publisher" pkg="robot_state_publisher"
     type="robot_state_publisher" />
-	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />  -->
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> 
 
 	<rosparam file="$(find atvsim_control)/config/joints.yaml" command="load" ns="atv_joint_state_controller"/>
 	<rosparam file="$(find atvsim_control)/config/steering_controller.yaml" command="load" ns="steer_controller"/>

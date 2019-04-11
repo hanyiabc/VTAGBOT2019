@@ -982,9 +982,10 @@
       <wheelDiameter>0.635</wheelDiameter>
       <wheelTorque>300</wheelTorque>
       <commandTopic>rear_wheel_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
+      <odometryTopic>odom_diff</odometryTopic>
+      <odometryFrame>odom_diff</odometryFrame>
       <robotBaseFrame>base_link</robotBaseFrame>
+      <publishOdomTF>false</publishOdomTF>
     </plugin>
 
   </gazebo>
