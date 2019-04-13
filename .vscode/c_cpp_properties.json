@@ -1,16 +1,25 @@
 {
     "configurations": [
         {
-            "name": "Linux",
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
             "includePath": [
-                "${workspaceFolder}/**",
-                "/usr/include/c++/7"
+                "/home/helen/VTAGBOT2019/devel/include",
+                "/opt/ros/melodic/include",
+                "/home/helen/VTAGBOT2019/src/driver_base/include",
+                "/home/helen/VTAGBOT2019/src/hector_slam/hector_geotiff/include",
+                "/home/helen/VTAGBOT2019/src/hector_slam/hector_map_tools/include",
+                "/home/helen/VTAGBOT2019/src/hector_slam/hector_mapping/include",
+                "/home/helen/VTAGBOT2019/src/hector_slam/hector_marker_drawing/include",
+                "/usr/include"
             ],
-            "defines": [],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64",
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c11",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64"
+            "cppStandard": "c++17"
         }
     ],
     "version": 4

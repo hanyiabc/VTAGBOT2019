@@ -1,11 +1,14 @@
 <launch>
   <node pkg="gps_common" type="utm_odometry_node" name="GPS2UTM" >
-  <!-- <remap from="/odom" to="/UTM"/> -->
+  <remap from="/odom" to="/UTM"/>
   </node>
-
-  <node pkg="navigation" type="agbot_nav_node" name="navigation_node" />
+  <node pkg="navigation" type="map_base_tf_node" name="map_base_transform_publisher" />
+  <node pkg="tf" type="static_transform_publisher" name="fixed_map" args="0 0 0 0 0 0 world map 200" />
+  <node pkg="tf" type="static_transform_publisher" name="fake_odom_tf" args="0 0 0 0 0 0 map odom 200" />
+  
+  <!-- <node pkg="navigation" type="agbot_nav_node" name="navigation_node" />
   <rosparam param="start_navigation">0</rosparam>
-  <rosparam param="reset_navigation">0</rosparam>
+  <rosparam param="reset_navigation">0</rosparam> -->
   
   <rosparam>
       waypoint_file_name: "../VTAGBOT2019/waypoints1.txt"
@@ -17,9 +20,7 @@
   <node pkg="post_gazebo" type="post_gazebo" name="post_gazebo_node" >
     <remap to="/novatel_imu" from="/IMU_rpy"/>
   </node>
-  <node pkg="tf" type="static_transform_publisher" name="fixed_map" args="0 0 0 0 0 0 /world /map 100" />
 
-  <node pkg="navigation" type="map_base_tf_node" name="map_base_transform_publisher" />
 
   <include file="$(find atvsim_gazebo)/launch/gazebo_world.launch" />
 
@@ -29,6 +30,20 @@
 	<param name="grid_resolution" value="0.5" />
 	<param name="grid_width" value="2000" />
 	<param name="grid_height" value="2000" />
-	<node pkg="navigation" type="laser_to_occupancy_grid.py" name="map_publisher" output="screen" />
+	<!-- <node pkg="navigation" type="laser_to_occupancy_grid.py" name="map_publisher" output="screen" /> -->
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find navigation)/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+    <rosparam file="$(find navigation)/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find navigation)/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find navigation)/global_costmap_params.yaml" command="load" /> 
+    <rosparam file="$(find navigation)/base_local_planner_params.yaml" command="load" />
+
+    <!-- <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+    <param name="controller_frequency" value="10.0" /> -->
+
+ </node>
+<node pkg="rviz" type="rviz" name="rviz"
+    args="-d $(find atvsim_gazebo)/launch/agbot_rivz.rviz"/>
 
 </launch>

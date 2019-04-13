@@ -47,10 +47,10 @@ int main(int argc, char **argv)
 
     ros::NodeHandle nh_;
     rpy.x = 0; rpy.y = 0; rpy.z = 0;
-    ros::Subscriber sub_imu_ = nh_.subscribe("/imu", 20, imuCallback_);
-    ros::Subscriber sub_speed_ = nh_.subscribe("/fix_velocity", 20, gpsCallback_);
-    pub_rpy_ = nh_.advertise<geometry_msgs::Point32>("IMU_rpy", 20);
-    pub_gps_ = nh_.advertise<std_msgs::Float64>("GPS_speed", 20);
+    ros::Subscriber sub_imu_ = nh_.subscribe("/imu", 100, imuCallback_);
+    ros::Subscriber sub_speed_ = nh_.subscribe("/fix_velocity", 100, gpsCallback_);
+    pub_rpy_ = nh_.advertise<geometry_msgs::Point32>("IMU_rpy", 100);
+    pub_gps_ = nh_.advertise<std_msgs::Float64>("GPS_speed", 100);
 
     ros::spin();
 

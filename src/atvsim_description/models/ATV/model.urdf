@@ -899,7 +899,7 @@
   </gazebo>
   <!-- hokuyo -->
   <gazebo reference="hokuyo_link">
-    <sensor type="ray" name="head_hokuyo_sensor">
+    <sensor type="gpu_ray" name="head_hokuyo_sensor">
     <pose>0 0 0 0 0 0</pose>
     <visualize>false</visualize>
     <update_rate>40</update_rate>
@@ -923,7 +923,7 @@
         <stddev>0.01</stddev>
       </noise>
     </ray>
-    <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+    <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
       <topicName>scan</topicName>
       <frameName>hokuyo_link</frameName>
     </plugin>
@@ -933,7 +933,7 @@
     <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
       <alwayson>true</alwayson>
       <!-- <frameID>fix</frameID> -->
-      <updaterate>50</updaterate>
+      <updaterate>20</updaterate>
       <bodyname>base_link</bodyname>
       <topicname>fix</topicname>
       <velocitytopicname>fix_velocity</velocitytopicname>
@@ -949,7 +949,7 @@
       <!-- <velocitygaussiannoise>0.1 0.1 0.1</velocitygaussiannoise> -->
     </plugin>
     <plugin filename="libhector_gazebo_ros_imu.so" name="imu_plugin">
-      <updateRate>100</updateRate>
+      <updateRate>200</updateRate>
       <bodyName>imu_link</bodyName>
       <topicName>imu</topicName>
       <serviceName>imu/calibrate</serviceName>

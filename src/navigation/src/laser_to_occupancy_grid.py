@@ -27,7 +27,7 @@ from geometry_msgs.msg import Pose
 rospy.init_node('later_to_occupancy_grid_node')
 
 # listener of transforms between the car_base_link and the world frame
-car_pose = tf.TransformListener()
+car_pose = tf.TransformListener(cache_time = rospy.Duration(2.0))
 
 # Initialize occupancy grid message
 map_msg = OccupancyGrid()
@@ -155,8 +155,11 @@ if __name__ == '__main__':
 
 	loop_rate = rospy.Rate(rate)
 
-	while not rospy.is_shutdown():
+	t = car_pose.getLatestCommonTime("base_link", "world")
+	car_pose.waitForTransform("base_link", "world", t, rospy.Duration(10.0))
 
+	while not rospy.is_shutdown():
+		
 		try:
 			t = car_pose.getLatestCommonTime("/base_link", "/world")
 			position, quaternion = car_pose.lookupTransform("/world", "/base_link", t)

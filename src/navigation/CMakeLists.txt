@@ -10,9 +10,9 @@ add_compile_options(-std=c++11)
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   roscpp
-  rospy
   sensor_msgs
   std_msgs
+  nav_msgs
   tf
 )
 find_package (Eigen3 3.3 REQUIRED NO_MODULE)

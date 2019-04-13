@@ -48,7 +48,7 @@ int execute(int argc, char **agrv, PPController cntrl)
 	return EXIT_FAILURE;
   }
 
-  auto fix = nh.subscribe("/odom", 500, pose_callback);
+  auto fix = nh.subscribe("/UTM", 500, pose_callback);
   auto imu = nh.subscribe("/novatel_imu", 500, heading_callback);
   // initialize publishers
   ros::Publisher pub_steering = nh.advertise<std_msgs::Float64>("steering_cmd", 500);
