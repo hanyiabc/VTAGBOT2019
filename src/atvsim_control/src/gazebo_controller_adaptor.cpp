@@ -7,7 +7,7 @@
 #include <math.h>
 #include <sstream>
 
-double wheelBase = 2.5;
+double wheelBase = 2.0;
 double convert_trans_rot_vel_to_steering_angle(double v, double omega, double wheelbase)
 {
   if (omega == 0 || v == 0)
@@ -29,35 +29,30 @@ public:
 void move_base_cmd_Callback(const geometry_msgs::Twist::ConstPtr &msg)
 {
   static ros::NodeHandle n;
-  static ros::Publisher steering_pub = n.advertise<std_msgs::Float64>("/steer_controller/command", 1000);
-  static ros::Publisher pedal_pub = n.advertise<geometry_msgs::Twist>("/rear_wheel_vel", 1000);
+  static ros::Publisher steering_pub = n.advertise<std_msgs::Float64>("/steering_pos_cmd", 1000);
+  static ros::Publisher pedal_pub = n.advertise<std_msgs::Float64>("/pedal_cmd", 1000);
   geometry_msgs::Twist newTwist(*msg);
 
   std_msgs::Float64 steer_mes;
-  steer_mes.data = convert_trans_rot_vel_to_steering_angle(newTwist.linear.x, msg->angular.z, wheelBase);
-  newTwist.linear.x *= 5;
-  pedal_pub.publish(newTwist);
-  if (steer_mes.data > 0)
-  {
-    steer_mes.data = steer_mes.data * 0.581;
-  }
-  else
-  {
-    steer_mes.data = steer_mes.data * 0.7727;
-  }
+  steer_mes.data = msg->angular.z;
+  //steer_mes.data = convert_trans_rot_vel_to_steering_angle(msg->linear.x, msg->angular.z, wheelBase);
+  std_msgs::Float64 ped_cmd;
+  ped_cmd.data = newTwist.linear.x;
+  pedal_pub.publish(ped_cmd);
   steering_pub.publish(std_msgs::Float64(steer_mes));
 }
 
 void Adaptor::steering_pos_cmd_Callback(const std_msgs::Float64::ConstPtr &msg)
 {
-  if (msg->data > 0)
-  {
-    steering_cmd.data = msg->data * 0.581;
-  }
-  else
-  {
-    steering_cmd.data = msg->data * 0.7727;
-  }
+  steering_cmd.data = msg->data;
+  // if (msg->data > 0)
+  // {
+  //   steering_cmd.data = msg->data * 0.581;
+  // }
+  // else
+  // {
+  //   steering_cmd.data = msg->data * 0.7727;
+  // }
 }
 
 void Adaptor::pedal_cmd_Callback(const std_msgs::Float64::ConstPtr &msg)
@@ -80,9 +75,9 @@ int main(int argc, char **argv)
   while (ros::ok())
   {
 
-    // steering_pub.publish(adaptor.steering_cmd);
-    // twist.linear.x = adaptor.pedal_cmd;
-    // pedal_pub.publish(twist);
+    steering_pub.publish(adaptor.steering_cmd);
+    twist.linear.x = adaptor.pedal_cmd;
+    pedal_pub.publish(twist);
     ros::spinOnce();
     loop_rate.sleep();
   }

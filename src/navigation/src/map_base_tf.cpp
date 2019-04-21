@@ -13,7 +13,7 @@ double yZero = 0;
 nav_msgs::Odometry fakeOdomMes;
 geometry_msgs::Point32 imuHeading;
 
-void wheelCallback(const std_msgs::Float64::ConstPtr &msg)
+void steering_callback(const std_msgs::Float64::ConstPtr &msg)
 {
     fakeOdomMes.twist.twist.angular.z = msg->data;
 }
@@ -80,7 +80,7 @@ int main(int argc, char **agrv)
     auto imu_sub = nh.subscribe("novatel_imu", 50, imu_callback);
     auto fake_odom = nh.advertise<nav_msgs::Odometry>("odom", 50);
     auto vel_sub = nh.subscribe("fix_velocity", 50, vel_callback);
-    auto steer_feedback = nh.subscribe("/steer_controller/command", 50, wheelCallback);
+    auto steer_feedback = nh.subscribe("/steering_pos_cmd", 50, steering_callback);
     ros::spinOnce();
     ros::Rate loop_rate(100);
     while (ros::ok())
