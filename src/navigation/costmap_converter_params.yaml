@@ -26,9 +26,9 @@ TebLocalPlannerROS:
   costmap_converter/CostmapToPolygonsDBSMCCH:
     cluster_max_distance : 5
     #Parameter for DB_Scan, maximum distance to neighbors [m]
-    cluster_min_pts:  3
+    cluster_min_pts:  2
     #Parameter for DB_Scan: minimum number of points that define a cluster
-    cluster_max_pts: 50
+    cluster_max_pts: 100
     #Parameter for DB_Scan: maximum number of points that define a cluster (limit cluster size to avoid large L- and U-shapes)
-    convex_hull_min_pt_separation: 1
+    convex_hull_min_pt_separation: 0.5
     #Clear keypoints/vertices of the convex polygon that are close to each other [distance in meters] (0: keep all)

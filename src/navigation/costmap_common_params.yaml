@@ -1,8 +1,8 @@
 obstacle_range: 30
-raytrace_range: 20
-footprint: [[-2, -2], [-2, 2], [2, 2], [2, -2]]
+raytrace_range: 30
+footprint: [[-1.5, -1.5], [-1.5, 1.5], [1.5, 1.5], [1.5, -1.5]]
 #robot_radius: ir_of_robot
-inflation_radius: 0.55
+inflation_radius: 1.0
 
 observation_sources: laser_scan_sensor 
 

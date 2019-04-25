@@ -4,6 +4,7 @@
 #include <geometry_msgs/Point32.h>
 #include <std_msgs/Float64.h>
 #include <math.h>
+#include <sensor_msgs/Imu.h>
 
 double x = 0;
 double y = 0;
@@ -15,7 +16,7 @@ geometry_msgs::Point32 imuHeading;
 
 void steering_callback(const std_msgs::Float64::ConstPtr &msg)
 {
-    fakeOdomMes.twist.twist.angular.z = msg->data;
+    //fakeOdomMes.twist.twist.angular.z = msg->data;
 }
 void vel_callback(const geometry_msgs::Vector3Stamped::ConstPtr &msg)
 {
@@ -63,11 +64,16 @@ void imu_callback(const geometry_msgs::Point32::ConstPtr &pt)
     transform.setRotation(q);
     //ROS_INFO("%s", "SentTF****************************");
     br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "base_link"));
-
     // fakeOdomMes.twist.twist.angular.x = pt->x;
     // fakeOdomMes.twist.twist.angular.y = pt->y;
     // fakeOdomMes.twist.twist.angular.z = pt->z;
 }
+
+void imuROS_callback(const sensor_msgs::Imu::ConstPtr &msg)
+{
+    fakeOdomMes.twist.twist.angular.z = msg->angular_velocity.z;
+}
+
 
 int main(int argc, char **agrv)
 {
@@ -81,6 +87,7 @@ int main(int argc, char **agrv)
     auto fake_odom = nh.advertise<nav_msgs::Odometry>("odom", 50);
     auto vel_sub = nh.subscribe("fix_velocity", 50, vel_callback);
     auto steer_feedback = nh.subscribe("/steering_pos_cmd", 50, steering_callback);
+    auto imuROS_sub = nh.subscribe("imu", 50, imuROS_callback);
     ros::spinOnce();
     ros::Rate loop_rate(100);
     while (ros::ok())
