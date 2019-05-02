@@ -72,6 +72,9 @@ void imu_callback(const geometry_msgs::Point32::ConstPtr &pt)
 void imuROS_callback(const sensor_msgs::Imu::ConstPtr &msg)
 {
     fakeOdomMes.twist.twist.angular.z = msg->angular_velocity.z;
+    fakeOdomMes.twist.twist.angular.y = msg->angular_velocity.y;
+    fakeOdomMes.twist.twist.angular.x = msg->angular_velocity.x;
+
 }
 
 
