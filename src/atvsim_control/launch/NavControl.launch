@@ -6,6 +6,9 @@
   <node pkg="tf" type="static_transform_publisher" name="fixed_map" args="0 0 0 0 0 0 world map 200" />
   <node pkg="tf" type="static_transform_publisher" name="fake_odom_tf" args="0 0 0 0 0 0 map odom 200" />
   
+  <node pkg="wp_publisher" type="wp_publisher_pub" name="waypoint_publisher" />
+  <node pkg="wp_publisher" type="wp_publisher_viz" name="waypoint_viz_and_receiver" />
+
   <!-- <node pkg="navigation" type="agbot_nav_node" name="navigation_node" />
   <rosparam param="start_navigation">0</rosparam>
   <rosparam param="reset_navigation">0</rosparam> -->
@@ -36,9 +39,17 @@
 
     <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
     <param name="controller_frequency" value="10.0" />
+    <param name="base_global_planner" value="global_planner/GlobalPlanner" />
+		<param name="planner_frequency" value="0.2" />
+    <param name="planner_patience" value="5.0" />
 
  </node>
-<node pkg="rviz" type="rviz" name="rviz"
-    args="-d $(find atvsim_gazebo)/launch/agbot_rivz.rviz"/>
+
+  <node pkg="swri_transform_util" type="initialize_origin.py" name="swri_origin" />
+  <node pkg="mapviz" type="mapviz" name="mapviz_node" output="screen" respawn="true"/>
+  
+
+<!-- <node pkg="rviz" type="rviz" name="rviz"
+    args="-d $(find atvsim_gazebo)/launch/agbot_rivz.rviz"/> -->
 
 </launch>
