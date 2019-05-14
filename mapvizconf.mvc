@@ -1,0 +1,151 @@
+capture_directory: ~
+fixed_frame: map
+target_frame: base_link
+fix_orientation: false
+rotate_90: false
+enable_antialiasing: true
+show_displays: true
+show_status_bar: true
+show_capture_tools: true
+window_width: 3840
+window_height: 2049
+view_scale: 0.03113918
+offset_x: -0.2006142
+offset_y: 0.2894106
+use_latest_transforms: true
+background: "#a0a0a4"
+displays:
+  - type: mapviz_plugins/tile_map
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      custom_sources:
+        []
+      bing_api_key: AtMp_6GvGwRc30Pw4N0duxDLo178FHTn23ab27437-V6PaE1qZf4-T3PpQz61_oN
+      source: Stamen (terrain)
+  - type: mapviz_plugins/odometry
+    name: Odom
+    config:
+      visible: true
+      collapsed: true
+      topic: /odom
+      color: "#00ff00"
+      draw_style: arrows
+      position_tolerance: 0
+      buffer_size: 50
+      show_laps: false
+      show_covariance: false
+      static_arrow_sizes: false
+      arrow_size: 69
+      show_timestamps: 0
+  - type: mapviz_plugins/occupancy_grid
+    name: Local Costmap
+    config:
+      visible: true
+      collapsed: false
+      alpha: 1
+      topic: /move_base/local_costmap/costmap
+      update: true
+      scheme: map
+  - type: mapviz_plugins/laserscan
+    name: Lidar
+    config:
+      visible: true
+      collapsed: true
+      topic: /scan
+      size: 4
+      buffer_size: 50
+      alpha: 1
+      color_transformer: Flat Color
+      min_color: "#ef2929"
+      max_color: "#000000"
+      value_min: 0
+      value_max: 100
+      use_rainbow: false
+  - type: mapviz_plugins/move_base
+    name: Goal Publisher
+    config:
+      visible: true
+      collapsed: false
+  - type: mapviz_plugins/path
+    name: Local Path
+    config:
+      visible: true
+      collapsed: true
+      topic: /move_base/TebLocalPlannerROS/local_plan
+      color: "#00ff00"
+  - type: mapviz_plugins/path
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      topic: /move_base/GlobalPlanner/plan
+      color: "#00ff00"
+  - type: mapviz_plugins/marker
+    name: Teb Markers
+    config:
+      visible: true
+      collapsed: true
+      topic: /move_base/TebLocalPlannerROS/teb_markers
+  - type: mapviz_plugins/image
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      topic: /front_camera/front_image_raw
+      anchor: top left
+      units: pixels
+      offset_x: 0
+      offset_y: 0
+      width: 754
+      height: 754
+      keep_ratio: true
+      image_transport: default
+  - type: mapviz_plugins/navsat
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      topic: /fix
+      color: "#ef2929"
+      draw_style: lines
+      position_tolerance: 0
+      buffer_size: 49
+  - type: mapviz_plugins/point_click_publisher
+    name: new display
+    config:
+      visible: false
+      collapsed: true
+      topic: /clicked_point
+      output_frame: map
+  - type: mapviz_plugins/robot_image
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      frame: base_link
+      image: /home/helen/car-clipart-from-above-4.png
+      width: 0
+      height: 0
+      offset_x: 0
+      offset_y: 0
+      ratio: original
+  - type: mapviz_plugins/marker
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      topic: /wp_markers
+  - type: mapviz_plugins/robot_image
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      frame: base_link
+      image: /home/helen/car-clipart-from-above-4.png
+      width: 2
+      height: 4
+      offset_x: 0
+      offset_y: 0
+      ratio: original
