@@ -7,6 +7,6 @@ local_costmap:
   rolling_window: true
   width: 80
   height: 80
-  resolution: 0.25
+  resolution: 0.5
   map_origin_x: 0.0
   map_origin_y: 0.0

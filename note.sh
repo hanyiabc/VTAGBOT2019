@@ -21,7 +21,7 @@ sed -i "s|hongxu|$USER|g" ./VTAGBOT2019/src/atvsim_gazebo/worlds/drillfieldTest.
 sudo apt install -y ros-melodic-joy ros-melodic-ros-control ros-melodic-gazebo-ros-control ros-melodic-hector-gazebo ros-melodic-gps-common
 sudo apt install -y ros-melodic-robot-state-publisher ros-melodic-media-export qt4-default ros-melodic-tf-conversions ros-melodic-navigation
 
-sudo apt install -y ros-melodic-teb-local-planner ros-melodic-navigation ros-melodic-pid ros-melodic-mapviz ros-melodic-mapviz-plugins ros-melodic-tile-map ros-melodic-multires-image ros-melodic-swri-transform-util
+sudo apt install -y ros-melodic-teb-local-planner ros-melodic-navigation ros-melodic-pid ros-melodic-mapviz ros-melodic-mapviz-plugins ros-melodic-tile-map ros-melodic-multires-image ros-melodic-swri-transform-util ros-melodic-sbpl-lattice-planner ros-melodic-actionlib-tutorials
 
 cd VTAGBOT2019
 catkin_make

@@ -36,12 +36,17 @@
     <rosparam file="$(find navigation)/base_local_planner_params.yaml" command="load" />
     <!-- LOAD COSTMAP_CONVERTER PARAMETERS HERE -->
     <rosparam file="$(find navigation)/costmap_converter_params.yaml" command="load" />
+    <rosparam file="$(find navigation)/sbpl_global_params.yaml" command="load" />
 
     <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
     <param name="controller_frequency" value="10.0" />
-    <param name="base_global_planner" value="global_planner/GlobalPlanner" />
+    <param name="SBPLLatticePlanner/primitive_filename" value="$(find navigation)/agbot.mprim" />
+
+    <param name="base_global_planner" value="SBPLLatticePlanner" />
+
 		<param name="planner_frequency" value="0.2" />
     <param name="planner_patience" value="5.0" />
+    
 
  </node>
 

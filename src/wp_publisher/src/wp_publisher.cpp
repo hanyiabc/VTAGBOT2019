@@ -5,13 +5,15 @@
 #include <geometry_msgs/PointStamped.h>
 #include <move_base_msgs/MoveBaseActionResult.h>
 #include <std_msgs/String.h>
+#include <nav_msgs/Path.h>
+#include <geometry_msgs/PoseStamped.h>
 
 using namespace actionlib;
 using namespace move_base_msgs;
 
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
 
-visualization_msgs::Marker markerPath;
+nav_msgs::Path wp_path;
 
 enum ACTION_TYPE {UNINIT, START, STOP, RESET, WAITING} currAction;
 
@@ -32,9 +34,9 @@ void action_cb(const std_msgs::String::ConstPtr &msg)
 	
 }
 
-void marker_cb(const visualization_msgs::Marker::ConstPtr &msg)
+void path_cb(const nav_msgs::Path::ConstPtr &msg)
 {
-	markerPath = *msg;
+	wp_path = *msg;
 }
 
 void doneCb(const SimpleClientGoalState & state, const MoveBaseActionConstPtr & result)
@@ -47,7 +49,7 @@ int main(int argc, char **argv)
 {
 	ros::init(argc, argv, "wp_publisher");
 	ros::NodeHandle n;
-    auto pt_sub = n.subscribe("wp_markers", 5, marker_cb);
+    auto path_sub = n.subscribe("wp_path", 5, path_cb);
     auto actionSub = n.subscribe("agbot_action", 5, action_cb);
 
 	MoveBaseClient ac("move_base", true);
@@ -67,10 +69,10 @@ int main(int argc, char **argv)
 		switch (currAction)
 		{
 		case START:
-			if(idx < markerPath.points.size())
+			if(idx < wp_path.poses.size())
 			{
 				goal.target_pose.header.stamp = ros::Time::now();
-				goal.target_pose.pose.position = markerPath.points[idx];
+				goal.target_pose = wp_path.poses[idx];
 				ac.sendGoal(goal);
 				currAction = WAITING;
 			}
