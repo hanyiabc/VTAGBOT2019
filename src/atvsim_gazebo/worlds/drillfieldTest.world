@@ -186,7 +186,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='oak_tree'>
+      <model name='pine_tree'>
         <pose frame=''>40.2462 14.0062 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
@@ -196,7 +196,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='oak_tree_0'>
+      <model name='pine_tree_0'>
         <pose frame=''>72.1259 20.241 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
@@ -206,7 +206,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='oak_tree_1'>
+      <model name='pine_tree_1'>
         <pose frame=''>67.2563 36.7647 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
@@ -4656,13 +4656,13 @@
       </link>
       <pose frame=''>10.0685 2.3667 0 0 -0 0</pose>
     </model>
-    <model name='oak_tree'>
+    <model name='pine_tree'>
       <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -4682,7 +4682,7 @@
         <visual name='branch'>
           <geometry>
             <mesh>
-              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
               <submesh>
                 <name>Branch</name>
               </submesh>
@@ -4690,16 +4690,16 @@
           </geometry>
           <material>
             <script>
-              <uri>model://oak_tree/materials/scripts/</uri>
-              <uri>model://oak_tree/materials/textures/</uri>
-              <name>OakTree/Branch</name>
+              <uri>model://pine_tree/materials/scripts/</uri>
+              <uri>model://pine_tree/materials/textures/</uri>
+              <name>pineTree/Branch</name>
             </script>
           </material>
         </visual>
         <visual name='bark'>
           <geometry>
             <mesh>
-              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
               <submesh>
                 <name>Bark</name>
               </submesh>
@@ -4707,9 +4707,9 @@
           </geometry>
           <material>
             <script>
-              <uri>model://oak_tree/materials/scripts/</uri>
-              <uri>model://oak_tree/materials/textures/</uri>
-              <name>OakTree/Bark</name>
+              <uri>model://pine_tree/materials/scripts/</uri>
+              <uri>model://pine_tree/materials/textures/</uri>
+              <name>pineTree/Bark</name>
             </script>
           </material>
         </visual>
@@ -4719,13 +4719,13 @@
       </link>
       <pose frame=''>40.2462 14.0062 0 0 -0 0</pose>
     </model>
-    <model name='oak_tree_0'>
+    <model name='pine_tree_0'>
       <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -4745,7 +4745,7 @@
         <visual name='branch'>
           <geometry>
             <mesh>
-              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
               <submesh>
                 <name>Branch</name>
               </submesh>
@@ -4753,16 +4753,16 @@
           </geometry>
           <material>
             <script>
-              <uri>model://oak_tree/materials/scripts/</uri>
-              <uri>model://oak_tree/materials/textures/</uri>
-              <name>OakTree/Branch</name>
+              <uri>model://pine_tree/materials/scripts/</uri>
+              <uri>model://pine_tree/materials/textures/</uri>
+              <name>pineTree/Branch</name>
             </script>
           </material>
         </visual>
         <visual name='bark'>
           <geometry>
             <mesh>
-              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
               <submesh>
                 <name>Bark</name>
               </submesh>
@@ -4770,9 +4770,9 @@
           </geometry>
           <material>
             <script>
-              <uri>model://oak_tree/materials/scripts/</uri>
-              <uri>model://oak_tree/materials/textures/</uri>
-              <name>OakTree/Bark</name>
+              <uri>model://pine_tree/materials/scripts/</uri>
+              <uri>model://pine_tree/materials/textures/</uri>
+              <name>pineTree/Bark</name>
             </script>
           </material>
         </visual>
@@ -4782,13 +4782,13 @@
       </link>
       <pose frame=''>72.1259 20.241 0 0 -0 0</pose>
     </model>
-    <model name='oak_tree_1'>
+    <model name='pine_tree_1'>
       <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -4808,7 +4808,7 @@
         <visual name='branch'>
           <geometry>
             <mesh>
-              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
               <submesh>
                 <name>Branch</name>
               </submesh>
@@ -4816,16 +4816,16 @@
           </geometry>
           <material>
             <script>
-              <uri>model://oak_tree/materials/scripts/</uri>
-              <uri>model://oak_tree/materials/textures/</uri>
-              <name>OakTree/Branch</name>
+              <uri>model://pine_tree/materials/scripts/</uri>
+              <uri>model://pine_tree/materials/textures/</uri>
+              <name>pineTree/Branch</name>
             </script>
           </material>
         </visual>
         <visual name='bark'>
           <geometry>
             <mesh>
-              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
               <submesh>
                 <name>Bark</name>
               </submesh>
@@ -4833,9 +4833,9 @@
           </geometry>
           <material>
             <script>
-              <uri>model://oak_tree/materials/scripts/</uri>
-              <uri>model://oak_tree/materials/textures/</uri>
-              <name>OakTree/Bark</name>
+              <uri>model://pine_tree/materials/scripts/</uri>
+              <uri>model://pine_tree/materials/textures/</uri>
+              <name>pineTree/Bark</name>
             </script>
           </material>
         </visual>

@@ -216,34 +216,33 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          base_link:
-            camera_link:
-              {}
-            front_left_wheel_steering_block:
-              front_left_wheel:
-                {}
-              steering_rod_left_block:
-                {}
-            front_right_wheel_steering_block:
-              front_right_wheel:
-                {}
-              steering_rod_right_block:
-                {}
-            hokuyo_link:
-              {}
-            imu_link:
-              {}
-            rear_left_wheel:
-              {}
-            rear_right_wheel:
-              {}
-          map__identity:
-            {}
-          odom:
-            {}
         world:
-          {}
+          map:
+            base_link:
+              camera_link:
+                {}
+              front_left_wheel_steering_block:
+                front_left_wheel:
+                  {}
+                steering_rod_left_block:
+                  {}
+              front_right_wheel_steering_block:
+                front_right_wheel:
+                  {}
+                steering_rod_right_block:
+                  {}
+              hokuyo_link:
+                {}
+              imu_link:
+                {}
+              rear_left_wheel:
+                {}
+              rear_right_wheel:
+                {}
+            map__identity:
+              {}
+            odom:
+              {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -341,5 +340,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1920
-  X: 0
-  Y: 55
+  X: 220
+  Y: 220

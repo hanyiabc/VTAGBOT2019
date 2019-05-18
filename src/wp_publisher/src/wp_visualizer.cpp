@@ -18,10 +18,11 @@ geometry_msgs::Pose poseData;
 
 geometry_msgs::Quaternion orientationBetween(geometry_msgs::Point pt1, geometry_msgs::Point pt2)
 {
-	double x_d = pt1.x - pt2.y;
-	double y_d = pt1.y - pt2.y;
+	double x_d = pt2.y - pt1.x;
+	double y_d = pt2.y - pt1.y;
 	double angle = atan2(x_d, y_d);
 	angle += M_PI / 2;
+	//angle = -angle;
 	tf::Quaternion q;
 	q.setRPY(0.0, 0.0, angle);
 	geometry_msgs::Quaternion gq;
