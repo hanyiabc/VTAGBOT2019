@@ -8,11 +8,29 @@
 #include <math.h>
 #include <tf/tf.h>
 #include <geometry_msgs/Quaternion.h>
+#include <nav_msgs/Odometry.h>
+#include <geometry_msgs/Point.h>
 
 visualization_msgs::Marker markerPath;
 visualization_msgs::Marker markerPt;
 nav_msgs::Path wp_path;
+geometry_msgs::Pose poseData;
 
+geometry_msgs::Quaternion orientationBetween(geometry_msgs::Point pt1, geometry_msgs::Point pt2)
+{
+	double x_d = pt1.x - pt2.y;
+	double y_d = pt1.y - pt2.y;
+	double angle = atan2(x_d, y_d);
+	angle += M_PI / 2;
+	tf::Quaternion q;
+	q.setRPY(0.0, 0.0, angle);
+	geometry_msgs::Quaternion gq;
+	gq.w = q.getW();
+	gq.x = q.getX();
+	gq.y = q.getY();
+	gq.z = q.getZ();
+	return gq;
+}
 
 void action_cb(const std_msgs::String::ConstPtr &msg)
 {
@@ -25,6 +43,11 @@ void action_cb(const std_msgs::String::ConstPtr &msg)
 	
 }
 
+void odom_cb(const nav_msgs::Odometry::ConstPtr &msg)
+{
+	poseData = msg->pose.pose;
+}
+
 void pt_cb(const geometry_msgs::PointStamped::ConstPtr &msg)
 {
 	markerPath.points.push_back(msg->point);
@@ -34,20 +57,17 @@ void pt_cb(const geometry_msgs::PointStamped::ConstPtr &msg)
 	currPose.pose.position = msg->point;
 	currPose.pose.orientation.w = 1.0;
 	wp_path.poses.push_back(currPose);
-	if(wp_path.poses.size() > 1)
+	if(wp_path.poses.size() >= 2)
 	{
-		double x_d = wp_path.poses[wp_path.poses.size() - 2].pose.position.x - msg->point.x;
-		double y_d = wp_path.poses[wp_path.poses.size() - 2].pose.position.y - msg->point.y;
-		double angle = atan2(x_d, y_d);
-		angle -= M_PI;
-		tf::Quaternion q;
-		q.setRPY(0.0, 0.0, angle);
-		geometry_msgs::Quaternion gq;
-		gq.w = q.getW();
-		gq.x = q.getX();
-		gq.y = q.getY();
-		gq.z = q.getZ();
-		wp_path.poses[wp_path.poses.size() - 2].pose.orientation = gq;
+		auto q = orientationBetween(wp_path.poses[wp_path.poses.size() - 2].pose.position, wp_path.poses.back().pose.position);;
+		wp_path.poses[wp_path.poses.size() - 1].pose.orientation = q;
+	}
+	// auto q = orientationBetween(poseData.position, msg->point);
+	// wp_path.poses[wp_path.poses.size() - 1].pose.orientation = q;
+	else if(wp_path.poses.size() == 1)
+	{
+		auto q = orientationBetween(poseData.position, msg->point);
+		wp_path.poses[wp_path.poses.size() - 1].pose.orientation = q;
 	}
 }
 
@@ -57,6 +77,7 @@ int main(int argc, char **argv)
 	ros::NodeHandle n;
     auto pt_sub = n.subscribe("clicked_point", 5, pt_cb);
     auto actionSub = n.subscribe("agbot_action", 5, action_cb);
+	auto odom_sub = n.subscribe("odom", 5, odom_cb);
 
 	auto marker_pub = n.advertise<visualization_msgs::Marker>("wp_markers", 50);
 	auto path_pub = n.advertise<nav_msgs::Path>("wp_path", 10);

@@ -1,13 +1,13 @@
-obstacle_range: 31
-raytrace_range: 30
+obstacle_range: 30
+raytrace_range: 30.5
 lethal_cost_threshold: 100
 unknown_threshold: 9
 mark_threshold: 0
 transform_tolerance: 0.3
-footprint: [[-1.5, -1.5], [-1.5, 1.5], [1.5, 1.5], [1.5, -1.5]]
+vertices: [ [-0.2, -0.8], [2.0, -0.8], [2.0, 0.8], [-0.2, 0.8] ]
 #robot_radius: ir_of_robot
 footprint_padding: 0.01
-inflation_radius: 1.0
+inflation_radius: 2.0
 cost_scaling_factor: 5
 
 observation_sources: laser_scan_sensor 
