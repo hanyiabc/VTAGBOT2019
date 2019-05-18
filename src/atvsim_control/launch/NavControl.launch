@@ -40,7 +40,7 @@
 
     <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
     <param name="controller_frequency" value="10.0" />
-    <param name="SBPLLatticePlanner/primitive_filename" value="$(find navigation)/agbot_samecost.mprim" />
+    <param name="SBPLLatticePlanner/primitive_filename" value="$(find navigation)/agbot.mprim" />
 
     <param name="base_global_planner" value="SBPLLatticePlanner" />
 
